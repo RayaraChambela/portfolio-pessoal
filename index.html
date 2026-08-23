@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nome Completo — Designer Gráfico(a) & UI/UX | Portfólio</title>
+  <meta name="description" content="Portfólio de Nome Completo, designer gráfico(a) e de produto. Veja trabalhos de branding, UI/UX e design editorial." />
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Cabeçalho / Navegação ===== -->
+  <header class="header" id="topo">
+    <div class="container header__bar">
+      <a href="#topo" class="logo">Nome Completo<span class="logo__dot">.</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Trabalhos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <span aria-hidden="true">🌙</span>
+        </button>
+        <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero container" id="inicio">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Design gráfico &amp; UI/UX</p>
+        <h1>Sou <span class="highlight">Nome Completo</span>, designer.</h1>
+        <p class="hero__lead">
+          [Espaço para uma frase de efeito sobre o que você cria — ex. "transformo briefings
+          em identidades visuais e interfaces que comunicam com clareza e têm personalidade".]
+        </p>
+        <div class="hero__cta">
+          <a href="#projetos" class="btn btn--primary">Ver trabalhos</a>
+          <a href="#contato" class="btn btn--ghost">Falar comigo</a>
+        </div>
+      </div>
+      <div class="hero__avatar" aria-hidden="true">🎨</div>
+    </section>
+
+    <!-- ===== Sobre ===== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2 class="section__title">Sobre</h2>
+        <p class="section__text">
+          [Placeholder de biografia — conte sua trajetória: quando começou no design, quais
+          áreas domina (branding, UI/UX, editorial, motion), que tipo de projeto mais gosta
+          de fazer e o que te diferencia como profissional.]
+        </p>
+        <ul class="facts">
+          <li><strong>X</strong> anos de experiência em design</li>
+          <li><strong>Y</strong> projetos entregues</li>
+          <li><strong>Z</strong> ferramentas dominadas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Habilidades ===== -->
+    <section class="section section--alt" id="habilidades">
+      <div class="container">
+        <h2 class="section__title">Habilidades</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Design Gráfico</h3>
+            <ul class="tags">
+              <li>Branding</li><li>Design Editorial</li><li>Ilustração</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>UI/UX</h3>
+            <ul class="tags">
+              <li>Wireframes</li><li>Protótipos</li><li>Design System</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Ferramentas</h3>
+            <ul class="tags">
+              <li>Figma</li><li>Adobe XD</li><li>Illustrator</li><li>Photoshop</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Complementares</h3>
+            <ul class="tags">
+              <li>Comunicação com cliente</li><li>Gestão de prazos</li><li>Pesquisa com usuários</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trabalhos ===== -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <h2 class="section__title">Trabalhos</h2>
+
+        <div class="filters" id="filtros" role="group" aria-label="Filtrar trabalhos por categoria">
+          <button class="filter-btn is-active" data-filter="todos" type="button">Todos</button>
+          <button class="filter-btn" data-filter="branding" type="button">Branding</button>
+          <button class="filter-btn" data-filter="ui-ux" type="button">UI/UX</button>
+          <button class="filter-btn" data-filter="editorial" type="button">Editorial</button>
+        </div>
+
+        <div class="projects-grid" id="projetos-grid">
+
+          <article class="project-card project-card--1" data-tags="branding">
+            <div class="project-card__thumb" aria-hidden="true">
+              <span>🎨</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Projeto 1</h3>
+              <p>[Descreva aqui o briefing do Projeto 1, o processo criativo e o resultado
+                entregue — ex. identidade visual completa para uma marca.]</p>
+              <ul class="tags">
+                <li>Branding</li><li>Identidade Visual</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link">Ver estudo de caso</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card--2" data-tags="ui-ux">
+            <div class="project-card__thumb" aria-hidden="true">
+              <span>📱</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Projeto 2</h3>
+              <p>[Descreva aqui o briefing do Projeto 2, o processo criativo e o resultado
+                entregue — ex. design de interface para um aplicativo.]</p>
+              <ul class="tags">
+                <li>UI/UX</li><li>Figma</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link">Ver protótipo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card--3" data-tags="editorial">
+            <div class="project-card__thumb" aria-hidden="true">
+              <span>📖</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Projeto 3</h3>
+              <p>[Descreva aqui o briefing do Projeto 3, o processo criativo e o resultado
+                entregue — ex. diagramação editorial de uma revista ou catálogo.]</p>
+              <ul class="tags">
+                <li>Editorial</li><li>Diagramação</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link">Ver estudo de caso</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>Nenhum trabalho encontrado para este filtro.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contato ===== -->
+    <section class="section section--alt" id="contato">
+      <div class="container contact">
+        <div class="contact__info">
+          <h2 class="section__title">Contato</h2>
+          <p class="section__text">
+            Vamos conversar sobre seu próximo projeto? Fale por e-mail ou pelas redes abaixo.
+          </p>
+          <ul class="contact__links">
+            <li><a href="mailto:seuemail@exemplo.com">✉️ seuemail@exemplo.com</a></li>
+            <li><a href="#" target="_blank" rel="noopener">🎨 Behance</a></li>
+            <li><a href="#" target="_blank" rel="noopener">🏀 Dribbble</a></li>
+            <li><a href="#" target="_blank" rel="noopener">💼 LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required />
+            <span class="field__error" data-error-for="nome"></span>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <span class="field__error" data-error-for="email"></span>
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <span class="field__error" data-error-for="mensagem"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Enviar mensagem</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__bar">
+      <p>&copy; <span id="ano-atual"></span> Nome Completo. Todos os direitos reservados.</p>
+      <div class="footer__socials">
+        <a href="#" target="_blank" rel="noopener" aria-label="Behance">🎨</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Dribbble">🏀</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+        <a href="mailto:seuemail@exemplo.com" aria-label="E-mail">✉️</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
