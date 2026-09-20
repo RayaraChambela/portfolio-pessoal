@@ -1,12 +1,24 @@
-# Portfólio Pessoal — 1ª Entrega
+# Portfólio Pessoal — Rayara Chambela
 
-Planejamento e implementação de um portfólio pessoal, aplicando desenvolvimento orientado por
-requisitos e com apoio de Inteligência Artificial durante o processo.
+Portfólio pessoal (v2) corrigido com as ferramentas de design do **Impeccable**, a partir
+de uma v1 gerada por template. Atividade: "correção sobre design pré-existente".
+
+## v1 → v2: o que mudou e onde ver
+
+- **Tag `v1`**: estado do projeto antes de qualquer correção (template genérico de
+  designer gráfica, conteúdo placeholder, formulário com envio simulado).
+  `git checkout v1 -- .` para restaurar, ou veja o histórico com `git show v1:index.html`.
+- **v2 (atual, HEAD)**: conteúdo real da Rayara (dev front-end em transição de carreira),
+  desvios de design corrigidos, acessibilidade reforçada, formulário honesto.
+- **[processo/index.html](processo/index.html)**: hub do processo — score de diagnóstico
+  (critique 21/32, audit 12/20), catálogo dos 23 comandos do Impeccable e os 7 registros
+  de aplicação (um por seção do portfólio + um de processo geral).
 
 ## Como rodar
 
-Não há build nem dependências. Basta abrir o arquivo `index.html` diretamente no navegador,
-ou servir a pasta com qualquer servidor estático:
+Não há build nem dependências. Basta abrir `index.html` diretamente no navegador, ou
+servir a pasta com qualquer servidor estático (recomendado, para os caminhos relativos
+das páginas de processo funcionarem corretamente):
 
 ```bash
 npx serve .
@@ -16,41 +28,52 @@ npx serve .
 
 ```
 portfolio-pessoal/
-├── index.html              # marcação da página (single page)
-├── css/style.css           # estilos, tema claro/escuro, responsividade
-├── js/script.js            # menu, tema, filtro de projetos, validação do formulário
-├── docs/
-│   ├── 01-visao-geral-e-personas.md
-│   ├── 02-requisitos.md
-│   ├── 03-backlog-priorizado.md
-│   └── 04-processo-com-ia.md
+├── index.html                     # portfólio (v2)
+├── css/style.css
+├── js/script.js
+├── PRODUCT.md                     # contexto de produto (comando init)
+├── DESIGN.md                      # sistema de design (comando document/extract)
+├── .impeccable/design.json        # sidecar do sistema de design
+├── processo/
+│   ├── index.html                 # hub do processo com Impeccable
+│   ├── catalogo-comandos.html     # catálogo dos 23 comandos
+│   ├── processo.css
+│   └── registros/                 # 7 registros de aplicação
+│       ├── header-navegacao.html
+│       ├── hero.html
+│       ├── sobre.html
+│       ├── habilidades.html
+│       ├── trabalhos.html
+│       ├── contato.html
+│       └── processo-geral.html
+├── docs/                          # planejamento original da 1ª entrega (RF/RNF, personas)
 └── README.md
 ```
 
-## Documentação do processo (leia nesta ordem)
+## Comandos do Impeccable aplicados (15 de 23)
 
-1. [Definição do projeto](docs/01-visao-geral-e-personas.md) — nome provisório, problema (≤80 palavras), teste das 5 perguntas, objetivo em uma frase, público principal, papéis de usuário, cenário de uso, suposições a validar e personas.
-2. [Requisitos funcionais e não funcionais](docs/02-requisitos.md) — RF/RNF levantados.
-3. [Backlog priorizado](docs/03-backlog-priorizado.md) — user stories, MoSCoW, o que entrou nesta entrega.
-4. [Uso de IA no processo](docs/04-processo-com-ia.md) — onde e como a IA apoiou o trabalho.
+`init`, `document`, `shape`, `critique`, `audit`, `typeset`, `colorize`, `layout`,
+`distill`, `clarify`, `harden`, `adapt`, `extract`, `live`, `polish` — cada um com
+objetivo, evidência, análise e decisão registrados em
+[processo/registros/](processo/registros/).
 
-## O que está implementado nesta entrega
+## Documentação do planejamento original (1ª entrega)
 
-- Navegação com rolagem suave e menu responsivo (hambúrguer no mobile).
+1. [Definição do projeto](docs/01-visao-geral-e-personas.md)
+2. [Requisitos funcionais e não funcionais](docs/02-requisitos.md)
+3. [Backlog priorizado](docs/03-backlog-priorizado.md)
+4. [Uso de IA no processo](docs/04-processo-com-ia.md)
+
+## O que está implementado
+
+- Navegação com rolagem suave e menu responsivo (hambúrguer com estado visual no mobile).
 - Tema claro/escuro com preferência salva no navegador.
-- Seções: Início, Sobre, Habilidades, Projetos (com filtro por tecnologia) e Contato.
-- Formulário de contato com validação client-side e feedback de erro por campo.
-
-## Antes de publicar/entregar como material real
-
-O conteúdo (nome, biografia, projetos, e-mail e links sociais) está com **dados placeholder**.
-Edite diretamente:
-
-- `index.html` → textos das seções e links (`href="#"` para GitHub/LinkedIn/repos, `mailto:seuemail@exemplo.com`).
-- Nenhuma imagem externa é usada (avatar é feito em CSS), então não há assets para trocar,
-  a menos que você queira adicionar uma foto real em `assets/`.
+- Seções: Início, Sobre, Habilidades, Trabalhos (filtro por tecnologia) e Contato.
+- Formulário de contato com validação client-side, erros ligados via
+  `aria-describedby`/`aria-invalid`, e envio honesto via `mailto:` (sem back-end nesta
+  entrega — não finge um envio que não aconteceu).
 
 ## Próximas entregas (fora de escopo aqui)
 
-Ver seção 3.2/3.3 do [backlog](docs/03-backlog-priorizado.md): envio real de formulário
-(back-end/serviço de e-mail), download de currículo em PDF, depoimentos, i18n.
+Serviço real de envio de formulário (Formspree/EmailJS), os 2 projetos de exemplo da
+seção Trabalhos substituídos por cases reais, perfil de LinkedIn real.

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catálogo de Comandos do Impeccable — Portfólio Rayara Chambela</title>
+<meta name="description" content="Catálogo dos 23 comandos oficiais do Impeccable: categoria, finalidade, momento de uso, exemplo, riscos e evidência." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="processo.css" />
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <a href="../index.html" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
+      <nav>
+        <a href="index.html">Processo</a>
+        <a href="catalogo-comandos.html">Catálogo</a>
+        <a href="../index.html">Portfólio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-main">
+    <div class="container">
+      <a href="index.html" class="doc-back">← Voltar ao processo</a>
+      <span class="doc-eyebrow">Estudo dos comandos</span>
+      <h1 class="doc-title">Catálogo de Comandos do Impeccable</h1>
+      <p class="doc-lead">
+        Os 23 comandos oficiais do Impeccable, estudados e catalogados antes da aplicação
+        no projeto. A categoria abaixo é uma classificação própria em 6 grupos (Criar,
+        Avaliar, Refinar, Simplificar, Preparar, Sistematizar), diferente da classificação
+        interna do skill (Build/Evaluate/Refine/Enhance/Fix/Iterate) — mapeada 1 a 1 a
+        partir dela.
+      </p>
+
+      <div class="doc-table-wrap">
+        <table class="doc-table">
+          <caption>15 destes 23 comandos foram efetivamente aplicados neste projeto (ver <a href="index.html">registros do processo</a>).</caption>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Finalidade</th>
+              <th>Momento de uso</th>
+              <th>Exemplo</th>
+              <th>Riscos</th>
+              <th>Evidência</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><code>init</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Criar</td>
+              <td>Capturar quem é o usuário, o propósito do produto e restrições duráveis em <code>PRODUCT.md</code>, antes de qualquer decisão visual.</td>
+              <td>No início de um projeto sem <code>PRODUCT.md</code>, ou quando fatos de produto mudaram (novo público, novo posicionamento).</td>
+              <td>Neste projeto: registrar que Rayara migrou de outra área para dev e que isso é um diferencial, não uma lacuna.</td>
+              <td>Perguntar coisas óbvias já respondidas no briefing (fadiga do usuário); ou inferir fatos de produto sem perguntar e documentá-los como se fossem confirmados.</td>
+              <td>O <code>PRODUCT.md</code> gerado reflete exatamente o que o usuário confirmou, sem seções genéricas "preenchidas" com prosa vaga.</td>
+            </tr>
+
+            <tr>
+              <td><code>document</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Sistematizar</td>
+              <td>Extrair o sistema de design já implementado (cores, tipografia, componentes) para um <code>DESIGN.md</code> normativo.</td>
+              <td>Quando existe código/UI coerente mas nenhum <code>DESIGN.md</code>; ou antes de um redesign grande, para capturar o "antes" como referência.</td>
+              <td>Gerar o <code>DESIGN.md</code> da v1 do portfólio a partir do CSS existente, antes de qualquer mudança visual.</td>
+              <td>Documentar tokens que não existem de fato (inventar uma paleta "oficial" a partir de um valor usado uma única vez); ou sobrescrever um <code>DESIGN.md</code> existente sem avisar.</td>
+              <td>Reexecutar o detector (<code>design-system-color</code>/<code>-font-size</code>) e ver os achados caírem, porque o código agora bate com o que foi documentado.</td>
+            </tr>
+
+            <tr>
+              <td><code>shape</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Criar</td>
+              <td>Descobrir o que deve ser construído e como deve funcionar — devolve um brief confirmado, sem código.</td>
+              <td>Antes de implementar uma mudança de escopo médio/grande, quando job/audiência/limites ainda não estão explícitos.</td>
+              <td>Confirmar o escopo da v2 (trocar persona designer→dev, corrigir desvios do <code>DESIGN.md</code>, sem redesenho estrutural) antes de tocar em código.</td>
+              <td>Pular a interview e já propor direção visual (isso é trabalho do <code>new-work</code>/outros comandos); ou escrever um brief tão genérico que não restringe nada.</td>
+              <td>O usuário confirma o brief em uma rodada, sem pedir correções — sinal de que o escopo estava bem lido.</td>
+            </tr>
+
+            <tr>
+              <td><code>craft</code></td>
+              <td>Criar</td>
+              <td>Alias descontinuado para "construir algo novo" — não adiciona comportamento próprio, só redireciona para o fluxo normal (init → new-work).</td>
+              <td>Nunca de propósito — existe apenas para não quebrar quem ainda digita <code>/impeccable craft</code> por hábito.</td>
+              <td>Um pedido como "crie uma landing page" é tratado do mesmo jeito com ou sem a palavra <code>craft</code>.</td>
+              <td>Achar que <code>craft</code> tem uma qualidade ou checklist própria e pular etapas reais (init, critique) por isso.</td>
+              <td>Não há evidência própria: a evidência é a do fluxo real que ele aciona (init/new-work).</td>
+            </tr>
+
+            <tr>
+              <td><code>extract</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Sistematizar</td>
+              <td>Identificar padrões repetidos (cores, componentes, espaçamentos) e consolidá-los formalmente no sistema de design.</td>
+              <td>Quando um padrão se repete 3+ vezes com a mesma intenção, ou ao final de uma rodada de mudanças, para "fechar" o sistema.</td>
+              <td>Atualizar o sidecar <code>.impeccable/design.json</code> após a v2 (raio 8px, mono, cores semânticas, regra de foco visível) para refletir o estado final.</td>
+              <td>Extrair algo usado uma única vez (abstração prematura); ou inventar uma "regra" de sistema que o código não sustenta de verdade.</td>
+              <td>O sidecar/DESIGN.md descrevem exatamente os componentes reais (botões, cards, chips) sem inventar variantes que não existem no HTML.</td>
+            </tr>
+
+            <tr>
+              <td><code>critique</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Avaliar</td>
+              <td>Review heurístico de design (Nielsen, carga cognitiva, personas) combinando julgamento humano/IA com evidência determinística do detector.</td>
+              <td>Antes de decidir o que corrigir — dá a lista priorizada (P0–P3) que justifica os comandos seguintes.</td>
+              <td>Rodar nos dois agentes isolados (design review + detector/navegador) em <code>index.html</code> e obter 21/32 com 3 P0.</td>
+              <td>Rodar em contexto único sem o banner "DEGRADED" (crítica não confiável e não avisada); ou não fazer as perguntas finais mesmo com 3+ problemas.</td>
+              <td>O score persistido em <code>.impeccable/critique/</code> permite comparar antes/depois em execuções futuras (linha de tendência).</td>
+            </tr>
+
+            <tr>
+              <td><code>audit</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Avaliar</td>
+              <td>Checagem técnica (a11y, performance, tema, responsivo, integridade de implementação) — documenta, não corrige.</td>
+              <td>Em paralelo/depois do <code>critique</code>, quando se quer números verificáveis (contraste, alvos de toque) e não só julgamento.</td>
+              <td>Detectar que os campos de erro do formulário não tinham <code>aria-describedby</code>/<code>aria-invalid</code>, confirmado ao vivo no navegador.</td>
+              <td>Reportar achados do detector sem verificar no código real (falso positivo não checado); relatar só P3 e enterrar os P0 reais.</td>
+              <td>Rodar o mesmo audit depois da correção e ver a nota subir (12/20 → recontagem após as correções de acessibilidade).</td>
+            </tr>
+
+            <tr>
+              <td><code>polish</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Refinar</td>
+              <td>Passe final de produção: acha e corrige o que ficou abaixo do padrão de qualidade em toda a jornada, não só um canto.</td>
+              <td>Como último passo antes de "publicar", depois que as correções pontuais (clarify/harden/etc.) já foram feitas.</td>
+              <td>Passar por toda a v2 (desktop+mobile, claro+escuro, teclado) verificando que nada regrediu depois da troca do avatar via <code>live</code>.</td>
+              <td>Polir um canto até a perfeição e deixar o resto no mesmo nível anterior (qualidade desigual); ou introduzir uma mudança de escopo disfarçada de polimento.</td>
+              <td>Checklist de estados (hover/focus/erro/sucesso) e viewports realmente verificado no navegador, não só "parece bom" por leitura de código.</td>
+            </tr>
+
+            <tr>
+              <td><code>bolder</code></td>
+              <td>Refinar</td>
+              <td>Amplificar uma seção que ficou "achatada" para o nível de convicção que o resto do sistema já tem — sem inventar cor/fonte nova.</td>
+              <td>Quando uma seção específica está visualmente mais tímida que as vizinhas, mas o sistema em si já está definido.</td>
+              <td>Se o Hero do portfólio ficasse mais "seguro de si" que a seção Sobre, usar <code>bolder</code> só na seção Sobre para igualar a presença.</td>
+              <td>Aplicar "mais ousado" em tudo (vira <code>overdrive</code>, não <code>bolder</code>); adicionar uma cor/fonte nova para "resolver" em vez de usar o que já existe com mais força.</td>
+              <td>Teste do esqueleto: sem o texto, a hierarquia sozinha ainda comunica o que a seção é.</td>
+            </tr>
+
+            <tr>
+              <td><code>quieter</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Simplificar</td>
+              <td>Reduzir intensidade visual (saturação, peso, ruído) sem virar genérico — sofisticação por contenção.</td>
+              <td>Quando uma interface está agressiva/carregada demais e compete consigo mesma por atenção.</td>
+              <td>Se os gradientes de dois tons nos thumbnails de projeto tivessem sido "acalmados" em vez de removidos, seria um caso de <code>quieter</code>.</td>
+              <td>Confundir "mais quieto" com "sem graça" (perder toda a personalidade); remover cor a ponto de quebrar hierarquia.</td>
+              <td>A interface ainda é reconhecível como a mesma marca, só menos ruidosa — comparação lado a lado antes/depois.</td>
+            </tr>
+
+            <tr>
+              <td><code>distill</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Simplificar</td>
+              <td>Cortar o que não se sustenta: elementos redundantes, decoração cosmética, informação repetida — chegar à essência.</td>
+              <td>Quando uma seção tenta dizer a mesma coisa de duas formas, ou tem elementos que não mudam a decisão do usuário.</td>
+              <td>Na seção Sobre, trocar 3 "facts" com números fabricados (X anos, Y projetos) por 3 afirmações honestas e qualitativas.</td>
+              <td>Cortar informação que o usuário precisa para decidir (simplicidade virando lacuna); tornar o conteúdo vago demais para parecer "limpo".</td>
+              <td>A seção comunica o mesmo (ou mais) com menos elementos — comparado por contagem de nós visuais antes/depois.</td>
+            </tr>
+
+            <tr>
+              <td><code>harden</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Preparar</td>
+              <td>Preparar a interface para dados/erros/condições reais: nada que só funciona com "dado perfeito" está pronto para produção.</td>
+              <td>Antes de publicar de verdade, quando ainda existem estados falsos, links mortos, ou validação só no feliz-caminho.</td>
+              <td>Trocar o "Mensagem enviada!" simulado por um <code>mailto:</code> real, e ligar erros de formulário via <code>aria-describedby</code>/<code>aria-invalid</code>.</td>
+              <td>"Enrijecer" a ponto de bloquear casos legítimos (validação excessiva); ou esconder o problema em vez de resolvê-lo (ex.: só suprimir a mensagem de erro).</td>
+              <td>Testar ao vivo: submeter vazio, ver erro específico por campo; submeter válido, ver o comportamento real (não fabricado) acontecer.</td>
+            </tr>
+
+            <tr>
+              <td><code>onboard</code></td>
+              <td>Preparar</td>
+              <td>Levar a pessoa ao primeiro valor real o mais rápido possível — não ensinar tudo, ensinar o suficiente para o "aha".</td>
+              <td>Em produtos com fluxo de primeiro uso, estados vazios ou telas de configuração inicial — não se aplica bem a um portfólio estático.</td>
+              <td>Não aplicado neste projeto (não há conta, fluxo de setup ou estado vazio de produto); citado no catálogo por completude.</td>
+              <td>Forçar um tutorial que ninguém pode pular; ensinar tudo de uma vez em vez de progressivamente.</td>
+              <td>Taxa de conclusão do onboarding e tempo até o "aha moment" medidos com uso real (não aplicável aqui).</td>
+            </tr>
+
+            <tr>
+              <td><code>animate</code></td>
+              <td>Refinar</td>
+              <td>Usar movimento para explicar estado, relação ou hierarquia — ou criar um momento autoral que a superfície realmente ganhou.</td>
+              <td>Quando uma transição de estado (abrir menu, trocar tema, erro de formulário) precisa de continuidade visual que hoje é abrupta.</td>
+              <td>A troca de ícone do hambúrguer (☰→✕) já usa uma transição CSS de 150ms — um caso pequeno e real de motion com propósito.</td>
+              <td>Animar uma área estática só porque existe (decoração sem função); ignorar <code>prefers-reduced-motion</code>.</td>
+              <td>A remoção da animação faria a interface perder significado/feedback — não é só enfeite.</td>
+            </tr>
+
+            <tr>
+              <td><code>colorize</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Refinar</td>
+              <td>Introduzir cor como hierarquia/significado — preservando compromissos de marca já confirmados, não substituindo a identidade.</td>
+              <td>Quando o cinza/neutro está escondendo hierarquia real, ou quando uma cor "decorativa" está sendo usada sem função (nosso caso).</td>
+              <td>Remover os gradientes de duas cores do avatar/thumbnails que quebravam a regra do acento único, deixando só o coral com função.</td>
+              <td>Adicionar uma segunda cor "oficial" sem necessidade real; tratar decoração como se fosse estratégia de cor.</td>
+              <td>Contraste recomputado ao vivo (5.93:1 claro / 8.42:1 escuro) e ausência de nova cor fora do <code>DESIGN.md</code> no detector.</td>
+            </tr>
+
+            <tr>
+              <td><code>typeset</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Refinar</td>
+              <td>Melhorar hierarquia tipográfica (papéis, escala, medida de leitura) dentro do sistema já estabelecido.</td>
+              <td>Quando títulos de níveis diferentes (H1 do hero vs. H2 de seção) estão próximos demais em peso/tamanho para carregar papéis distintos.</td>
+              <td>Aumentar o H1 do hero (1.8–2.6rem → 2.1–3.2rem) e reduzir levemente os H2 de seção, criando mais distância de papel entre os dois.</td>
+              <td>Trocar família tipográfica "só porque" (isso é <code>new-work</code>, não <code>typeset</code>); criar hierarquia só por tamanho, ignorando peso/família.</td>
+              <td>Rodar o detector com <code>--scope type</code> e checar visualmente que os papéis (display/body/label) se distinguem à primeira vista.</td>
+            </tr>
+
+            <tr>
+              <td><code>layout</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Refinar</td>
+              <td>Traduzir prioridade de produto em ordem de leitura, agrupamento e ritmo espacial — diagnosticar a estrutura antes de mover caixas.</td>
+              <td>Quando o espaçamento é um valor único repetido sem ritmo deliberado, ou quando a densidade não bate com a frequência de uso.</td>
+              <td>Introduzir uma escala de espaçamento nomeada (<code>--space-sm/md/lg/xl</code>) e aplicá-la no grid de habilidades, no lugar de valores soltos.</td>
+              <td>Reorganizar estrutura sem "teste do olho semicerrado" (perder a hierarquia real); mudar densidade sem considerar o modo da superfície.</td>
+              <td>Teste do olho semicerrado: borrando o conteúdo, ainda dá para apontar o elemento primário e os grupos principais na ordem certa.</td>
+            </tr>
+
+            <tr>
+              <td><code>delight</code></td>
+              <td>Refinar</td>
+              <td>Tornar um momento memorável quando ele realmente ganhou isso — personalidade revelada por um detalhe útil, não uma camada de fofura genérica.</td>
+              <td>Em momentos emocionais específicos (primeiro uso, conclusão, recuperação de erro) — não em toda interação trivial.</td>
+              <td>Não aplicado como comando isolado neste projeto; o <code>&lt;RC/&gt;</code> aceito via <code>live</code> já cumpre parte desse papel (personalidade técnica no logo).</td>
+              <td>Fabricar celebração para um clique comum; piada em um momento de erro/perda de dados (quebra confiança).</td>
+              <td>O momento é específico o bastante que um produto vizinho não poderia copiar sem adaptar.</td>
+            </tr>
+
+            <tr>
+              <td><code>overdrive</code></td>
+              <td>Refinar</td>
+              <td>Empurrar a interface além do convencional com recursos avançados do navegador — extraordinário no contexto certo, vergonhoso no errado.</td>
+              <td>Superfícies visuais/marketing com orçamento de ambição alto; nunca sem antes propor 2-3 direções e obter aprovação explícita.</td>
+              <td>Não aplicado (portfólio pessoal simples não pede WebGL/scroll-driven animation; seria desproporcional ao produto).</td>
+              <td>Maior risco do catálogo: pode gerar algo tecnicamente impressionante e contextualmente constrangedor (ex. partículas numa tela de configurações).</td>
+              <td>"Teste da remoção": tirar o efeito e ver se a experiência realmente piora, ou se ninguém notaria a ausência.</td>
+            </tr>
+
+            <tr>
+              <td><code>clarify</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Simplificar</td>
+              <td>Reescrever texto de interface pouco claro — o que aconteceu, o que importa, o que fazer a seguir — preservando significado e voz.</td>
+              <td>Quando rótulos, mensagens de erro/sucesso ou texto de ajuda são ambíguos, genéricos ou usam jargão não explicado.</td>
+              <td>Reescrever toda a copy do site (habilidades, projetos, CTAs) que descrevia uma designer gráfica para descrever a Rayara dev de verdade.</td>
+              <td>Mudar uma afirmação factual sem confirmar com o usuário; deixar a copy tecnicamente "clara" porém sem voz nenhuma.</td>
+              <td>Um visitante entende em segundos quem é a pessoa e o que ela faz — validado lendo o texto renderizado, não o código-fonte.</td>
+            </tr>
+
+            <tr>
+              <td><code>adapt</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Preparar</td>
+              <td>Adaptar para um contexto diferente (tela, dispositivo, input) repensando a experiência — não só encolher pixels.</td>
+              <td>Quando o comportamento mobile é herdado do desktop sem ajuste real (ex.: menu sem feedback de estado, alvos de toque pequenos).</td>
+              <td>Corrigir o ícone do hambúrguer para trocar de estado (☰/✕) e aumentar os ícones do rodapé para 44×44px no mobile.</td>
+              <td>Detectar dispositivo em vez de recurso; assumir que mobile = usuário menos capaz; esconder funcionalidade real no mobile.</td>
+              <td>Testado de verdade em viewport 375px no navegador: menu abre/fecha, ícone muda, nada quebra.</td>
+            </tr>
+
+            <tr>
+              <td><code>optimize</code></td>
+              <td>Preparar</td>
+              <td>Diagnosticar o gargalo real de performance, corrigir, então medir — nunca otimizar o que não está lento.</td>
+              <td>Quando há sinal concreto de lentidão (Core Web Vitals, bundle grande, muitas requisições) — não por precaução genérica.</td>
+              <td>Reduzir de 6 para 3 variações de peso de fonte carregadas via Google Fonts (Inter 400/600, Poppins 700, JetBrains Mono 500).</td>
+              <td>Otimizar microdetalhe irrelevante enquanto ignora o gargalo real; quebrar funcionalidade em nome de performance.</td>
+              <td>Comparar o número de arquivos de fonte/pesos carregados antes/depois via aba de rede do navegador.</td>
+            </tr>
+
+            <tr>
+              <td><code>live</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td>Sistematizar</td>
+              <td>Modo interativo no navegador: selecionar um elemento, descrever a mudança, gerar 3 variações reais e aceitar uma — sem sair do fluxo visual.</td>
+              <td>Para decisões pontuais de um elemento específico onde ver 3 opções lado a lado é mais rápido que descrever em texto.</td>
+              <td>Selecionar o avatar do hero, pedir "mais personalidade técnica" e escolher entre <code>RC</code> liso, <code>&lt;RC/&gt;</code> e um rótulo de terminal.</td>
+              <td>Aceitar uma variação sem o "teste do olho semicerrado" contra a identidade (pode derivar para uma marca diferente sem perceber).</td>
+              <td>O evento <code>accept</code> confirmado pelo servidor e a limpeza de "carbonize" verificada (sem marcadores residuais no código-fonte).</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <section class="doc-section" style="margin-top:48px">
+        <h2>Mapeamento de categorias usado neste catálogo</h2>
+        <div class="doc-grid">
+          <div class="doc-card"><h3>Criar</h3><p><code>craft</code>, <code>shape</code>, <code>init</code></p></div>
+          <div class="doc-card"><h3>Sistematizar</h3><p><code>document</code>, <code>extract</code>, <code>live</code></p></div>
+          <div class="doc-card"><h3>Avaliar</h3><p><code>critique</code>, <code>audit</code></p></div>
+          <div class="doc-card"><h3>Refinar</h3><p><code>polish</code>, <code>bolder</code>, <code>delight</code>, <code>animate</code>, <code>colorize</code>, <code>typeset</code>, <code>layout</code>, <code>overdrive</code></p></div>
+          <div class="doc-card"><h3>Simplificar</h3><p><code>distill</code>, <code>quieter</code>, <code>clarify</code></p></div>
+          <div class="doc-card"><h3>Preparar</h3><p><code>harden</code>, <code>onboard</code>, <code>adapt</code>, <code>optimize</code></p></div>
+        </div>
+        <p style="margin-top:16px">3 + 3 + 2 + 8 + 3 + 4 = 23 comandos. A categoria interna do skill (Build/Evaluate/Refine/Enhance/Fix/Iterate) foi usada como ponto de partida, mas reagrupada nessas 6 categorias porque o enunciado da atividade as define de forma diferente da nomenclatura oficial do Impeccable.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

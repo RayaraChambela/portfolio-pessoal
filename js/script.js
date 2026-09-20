@@ -9,9 +9,13 @@ document.getElementById("ano-atual").textContent = new Date().getFullYear();
 const nav = document.getElementById("nav");
 const navToggle = document.getElementById("nav-toggle");
 
+const navToggleIcon = navToggle.querySelector("span");
+
 navToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  navToggleIcon.textContent = isOpen ? "✕" : "☰";
 });
 
 // Fecha o menu ao clicar em um link (útil no mobile)
@@ -19,6 +23,8 @@ nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("is-open");
     navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menu");
+    navToggleIcon.textContent = "☰";
   });
 });
 
@@ -60,8 +66,12 @@ const emptyState = document.getElementById("empty-state");
 
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => b.classList.remove("is-active"));
+    filterButtons.forEach((b) => {
+      b.classList.remove("is-active");
+      b.setAttribute("aria-pressed", "false");
+    });
     btn.classList.add("is-active");
+    btn.setAttribute("aria-pressed", "true");
 
     const filter = btn.dataset.filter;
     let visibleCount = 0;
@@ -98,10 +108,12 @@ function validateField(field) {
   if (result === true) {
     wrapper.classList.remove("has-error");
     errorEl.textContent = "";
+    field.setAttribute("aria-invalid", "false");
     return true;
   } else {
     wrapper.classList.add("has-error");
     errorEl.textContent = result;
+    field.setAttribute("aria-invalid", "true");
     return false;
   }
 }
@@ -124,10 +136,20 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // Nesta entrega não há back-end: o envio é simulado (ver docs/02-requisitos.md).
-  // Para uma próxima entrega, plugar aqui um serviço real (ex.: Formspree, EmailJS)
-  // usando fetch() para enviar form.elements.nome/email/mensagem.
-  formStatus.textContent = "Mensagem enviada! (envio simulado nesta entrega)";
+  // Sem back-end nesta entrega: em vez de simular um envio bem-sucedido (o que
+  // enganaria quem preenche o formulário achando que a mensagem chegou), abrimos
+  // o app de e-mail do visitante já preenchido com os dados digitados. É uma ação
+  // real, não uma resposta fabricada — ver docs/02-requisitos.md para a próxima
+  // entrega com um serviço real (ex.: Formspree, EmailJS) via fetch().
+  const nome = form.elements.nome.value.trim();
+  const email = form.elements.email.value.trim();
+  const mensagem = form.elements.mensagem.value.trim();
+  const assunto = encodeURIComponent(`Contato via portfólio — ${nome}`);
+  const corpo = encodeURIComponent(`${mensagem}\n\n— ${nome} (${email})`);
+
+  formStatus.textContent = "Abrindo seu app de e-mail para enviar a mensagem a rachambela@gmail.com...";
   formStatus.classList.add("is-success");
+
+  window.location.href = `mailto:rachambela@gmail.com?subject=${assunto}&body=${corpo}`;
   form.reset();
 });

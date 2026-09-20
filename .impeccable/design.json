@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-20T21:20:00.000Z",
+  "title": "Design System: Portfólio Pessoal — Rayara Chambela",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Coral Sinal", "canonical": "#ff5a3c", "tonalRamp": ["#3d140a", "#6b2312", "#99321a", "#c74322", "#ff5a3c", "#ff8266", "#ffab98", "#ffd6cb"] },
+      "bg": { "role": "neutral", "displayName": "Bege Papel", "canonical": "#fffdfb", "tonalRamp": ["#16130f", "#221e18", "#332c22", "#4a4033", "#6b5f4d", "#a89b83", "#d9d0bd", "#fffdfb"] },
+      "bg-alt": { "role": "neutral", "displayName": "Bege Cartão", "canonical": "#f6f1ec", "tonalRamp": ["#1e1a15", "#2b2620", "#3d362c", "#574d3f", "#7d715d", "#a89b84", "#cfc4b0", "#f6f1ec"] },
+      "card-bg": { "role": "neutral", "displayName": "Branco Cartão", "canonical": "#ffffff", "tonalRamp": ["#221c16", "#332921", "#4a3c30", "#695748", "#8f7a67", "#b8a48f", "#ded0bf", "#ffffff"] },
+      "text": { "role": "neutral", "displayName": "Grafite Texto", "canonical": "#201a17", "tonalRamp": ["#0d0a08", "#150f0d", "#201a17", "#3a312c", "#6b615c", "#948a83", "#c2b9b2", "#f7f1ea"] },
+      "text-muted": { "role": "neutral", "displayName": "Grafite Suave", "canonical": "#6b615c", "tonalRamp": ["#2b2521", "#3f3833", "#544c45", "#6b615c", "#847a72", "#a89f97", "#c9c1ba", "#b8ada4"] },
+      "border": { "role": "neutral", "displayName": "Linha Quente", "canonical": "#e8ded6", "tonalRamp": ["#33291f", "#4a3d2e", "#65543f", "#836e54", "#a68e6f", "#c9b294", "#e8ded6", "#f5efe9"] },
+      "error": { "role": "error", "displayName": "Erro", "canonical": "#e5484d", "tonalRamp": ["#3d0e10", "#6b191c", "#992429", "#c72f36", "#e5484d", "#ea6a6e", "#f09b9e", "#f8d4d5"] },
+      "success": { "role": "success", "displayName": "Sucesso", "canonical": "#12a150", "tonalRamp": ["#052611", "#0a3f1d", "#0f582a", "#137138", "#12a150", "#4dbf7c", "#8ad9a9", "#c8f0d7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Headline do hero e títulos de seção/card." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos, bio, descrições de projeto." },
+      "label": { "displayName": "Label/Mono", "purpose": "Tags de tecnologia, eyebrows, labels técnicas — assinatura 'feito por quem programa'." }
+    },
+    "shadows": [
+      { "name": "resting", "value": "0 10px 28px rgba(32,26,23,0.08)", "purpose": "Elevação de repouso de cards e formulário (modo claro)." },
+      { "name": "resting-dark", "value": "0 10px 28px rgba(0,0,0,0.45)", "purpose": "Mesma elevação de repouso, modo escuro." }
+    ],
+    "motion": [
+      { "name": "theme-transition", "value": "background-color .2s ease, color .2s ease", "purpose": "Transição suave ao alternar tema claro/escuro." },
+      { "name": "card-lift", "value": "transform .15s ease", "purpose": "translateY(-4px) no hover do card de projeto." },
+      { "name": "nav-icon-swap", "value": "transform .15s ease", "purpose": "Rotação do ícone do menu hambúrguer ao abrir/fechar." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "780px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal (Ver trabalhos, Enviar mensagem).",
+      "html": "<button class=\"ds-btn-primary\">Ver trabalhos</button>",
+      "css": ".ds-btn-primary { background: #ff5a3c; color: #ffffff; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: .95rem; border: 2px solid transparent; cursor: pointer; } .ds-btn-primary:hover { opacity: .9; } .ds-btn-primary:focus-visible { outline: 2px solid #ff5a3c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão Ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ação secundária (Falar comigo).",
+      "html": "<button class=\"ds-btn-ghost\">Falar comigo</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #201a17; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: .95rem; border: 2px solid #e8ded6; cursor: pointer; } .ds-btn-ghost:hover { border-color: #ff5a3c; color: #ff5a3c; } .ds-btn-ghost:focus-visible { outline: 2px solid #ff5a3c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Card de Projeto",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card com thumbnail sólida (sem gradiente), badge real/exemplo, título, descrição, tags mono e link de estudo de caso.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-thumb\">💻</div><span class=\"ds-project-badge\">Projeto real</span><div class=\"ds-project-body\"><h3>Título</h3><p>Descrição breve do projeto.</p></div></article>",
+      "css": ".ds-project-card { background: #ffffff; border: 1px solid #e8ded6; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 28px rgba(32,26,23,0.08); transition: transform .15s ease; } .ds-project-card:hover { transform: translateY(-4px); } .ds-project-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; background: #f6f1ec; border-bottom: 3px solid #ff5a3c; } .ds-project-badge { display: inline-block; margin: 14px 18px -6px; font-family: 'JetBrains Mono', monospace; font-size: .72rem; text-transform: uppercase; color: #6b615c; background: #f6f1ec; border: 1px solid #e8ded6; border-radius: 8px; padding: 2px 8px; } .ds-project-body { padding: 18px; }"
+    },
+    {
+      "name": "Chip/Tag (mono)",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tag de tecnologia em habilidades e projetos — fonte monoespaçada como assinatura técnica.",
+      "html": "<span class=\"ds-chip\">javascript</span>",
+      "css": ".ds-chip { display: inline-block; background: #f6f1ec; border: 1px solid #e8ded6; padding: 4px 10px; border-radius: 8px; font-size: .8rem; font-family: 'JetBrains Mono', monospace; color: #6b615c; }"
+    },
+    {
+      "name": "Campo de Formulário",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Input de texto com anel de foco visível (não só troca de borda) e aria-invalid.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Nome\" aria-invalid=\"false\">",
+      "css": ".ds-input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #e8ded6; background: #fffdfb; color: #201a17; font: inherit; } .ds-input:focus { border-color: #ff5a3c; } .ds-input:focus-visible { outline: 2px solid #ff5a3c; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Sinal Vivo",
+    "overview": "Um sistema de neutros discretos — bege quente no claro, grafite quente no escuro — que existe para dar espaço a um único acento coral vibrante. O coral não decora: é usado com parcimônia, como marcador de ação e identidade. Na v2, a personalidade migrou de 'suave e confiável' para técnica e direta: cantos reduzidos a um raio único de 8px (sem pílulas), e uma fonte monoespaçada assina os elementos técnicos (tags, labels, eyebrows) como uma marca de 'isto é feito por quem programa'.",
+    "keyCharacteristics": [
+      "Um único acento (coral) sobre neutros quentes; nunca dois acentos competindo.",
+      "Cantos discretos e consistentes (8px) — geometria rigorosa, não decorativa.",
+      "Fonte monoespaçada em elementos técnicos como assinatura de identidade.",
+      "Tema claro/escuro simétrico: mesma estrutura de tokens, valores invertidos em luminância.",
+      "Sombra única e suave usada como elevação de repouso, não como resposta a estado."
+    ],
+    "rules": [
+      { "name": "A Regra do Acento Único", "body": "O coral nunca aparece em pares ou competindo com outra cor de destaque no mesmo componente. Na v2, os gradientes de duas cores que quebravam essa regra (avatar do hero, thumbnails de projeto) foram removidos e substituídos por preenchimento sólido + borda de acento único.", "section": "colors" },
+      { "name": "A Regra do Contraste de Peso", "body": "Nenhum texto usa peso 300 ou itálico como recurso de hierarquia; a diferença entre display e body é feita por família e tamanho.", "section": "typography" },
+      { "name": "A Regra da Sombra Única", "body": "Existe apenas um valor de sombra no sistema. Não introduzir uma segunda escala de elevação sem necessidade real de hierarquia de camadas.", "section": "elevation" },
+      { "name": "A Regra do Foco Visível", "body": "Todo elemento interativo (link, botão, campo) recebe um anel de foco sólido na cor de acento via :focus-visible — nunca apenas outline: none sem substituto.", "section": "components" }
+    ],
+    "dos": [
+      "Do manter o coral como único acento de identidade e ação.",
+      "Do manter a simetria de tema claro/escuro para todo novo token.",
+      "Do manter o raio único de 8px como assinatura de forma técnica.",
+      "Do dar a todo elemento interativo um anel de foco visível."
+    ],
+    "donts": [
+      "Don't adicionar uma segunda escala de sombra sem necessidade de hierarquia real.",
+      "Don't reintroduzir gradientes decorativos de duas cores.",
+      "Don't introduzir peso de fonte fino (300) ou itálico como recurso de hierarquia.",
+      "Don't suprimir o outline de foco sem um substituto visível equivalente."
+    ]
+  }
+}

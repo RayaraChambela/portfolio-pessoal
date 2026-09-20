@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registro: Sobre — Processo Impeccable</title>
+<meta name="description" content="Registro da aplicação do comando distill na seção Sobre do portfólio." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../processo.css" />
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
+      <nav>
+        <a href="../index.html">Processo</a>
+        <a href="../catalogo-comandos.html">Catálogo</a>
+        <a href="../../index.html">Portfólio</a>
+      </nav>
+    </div>
+  </header>
+  <main class="doc-main">
+    <div class="container" style="max-width: 760px">
+      <a href="../index.html" class="doc-back">← Voltar ao processo</a>
+      <span class="doc-eyebrow">Registro de aplicação · Seção 3/6</span>
+      <h1 class="doc-title">Sobre</h1>
+      <p class="doc-lead">Biografia curta e a lista de "facts" ao lado do texto.</p>
+
+      <dl class="doc-field"><dt>Problema observado</dt><dd>Na v1, a seção "Sobre" tinha bio em colchetes de instrução ("[Conte sua trajetória...]") e três "facts" com placeholders literais: <strong>X</strong> anos de experiência, <strong>Y</strong> projetos entregues, <strong>Z</strong> ferramentas — números fabricados que o <code>PRODUCT.md</code> explicitamente proíbe (nenhuma métrica real de projetos entregues foi fornecida).</dd></dl>
+      <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Cortar os números fabricados e reduzir a bio a uma afirmação direta sobre a transição de carreira resolve dois problemas de uma vez: honestidade (Princípio de Produto #2) e concisão — sem precisar inventar dado nenhum.</dd></dl>
+      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>distill</code> — remover o que não se sustenta (métricas fabricadas) e chegar à essência da mensagem (é uma transição de carreira real, isso já é suficiente).</dd></dl>
+      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"Os três 'facts' (X anos, Y projetos, Z ferramentas) são números fabricados que o PRODUCT.md proíbe. Distile a seção: substitua por afirmações qualitativas honestas sobre a transição de carreira, sem inventar nenhum número, e reduza a bio ao essencial sobre quem é a Rayara e como ela trabalha."</dd></dl>
+
+      <div class="doc-card">
+        <h2 style="margin-top:0">Objetivo</h2>
+        <p>Eliminar todo dado numérico fabricado da seção, substituindo por 3 afirmações qualitativas verdadeiras ("Em transição de carreira para dev", "Front-end como foco atual", "Visão de produto como diferencial"), e reescrever a bio como um parágrafo direto sobre a trajetória e o jeito de trabalhar.</p>
+
+        <h2>Resultado produzido</h2>
+        <p><code>index.html</code>: a lista <code>.facts</code> não tem mais números; a bio conecta a transição de carreira à forma de trabalhar (entender o problema antes de codar) — mesma ideia do <code>PRODUCT.md</code>, sem repeti-la ipsis litteris.</p>
+
+        <h2>Evidência</h2>
+        <div class="doc-evidence">
+          Contagem de caracteres/afirmações fabricadas: 3 números inventados (X/Y/Z) → 0. O texto renderizado foi lido de ponta a ponta (<code>get_page_text</code>) confirmando que nenhuma métrica de "projetos entregues" ou "anos de experiência" aparece em lugar nenhum da seção.
+        </div>
+
+        <h2>Análise do resultado</h2>
+        <p>A seção ficou mais curta e, paradoxalmente, mais convincente: números redondos e genéricos (como "X anos") são um sinal clássico de placeholder não substituído, e removê-los evita o mesmo "cheiro de template" que o <code>critique</code> apontou como problema geral do site. O risco de "simplificar demais" (perder informação necessária) foi evitado porque o essencial — quem ela é e por que isso importa para quem avalia — continua presente.</p>
+
+        <h2>Decisão</h2>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span>.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

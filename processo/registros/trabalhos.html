@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registro: Trabalhos — Processo Impeccable</title>
+<meta name="description" content="Registro da aplicação do comando clarify na seção Trabalhos do portfólio." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../processo.css" />
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
+      <nav>
+        <a href="../index.html">Processo</a>
+        <a href="../catalogo-comandos.html">Catálogo</a>
+        <a href="../../index.html">Portfólio</a>
+      </nav>
+    </div>
+  </header>
+  <main class="doc-main">
+    <div class="container" style="max-width: 760px">
+      <a href="../index.html" class="doc-back">← Voltar ao processo</a>
+      <span class="doc-eyebrow">Registro de aplicação · Seção 5/6</span>
+      <h1 class="doc-title">Trabalhos</h1>
+      <p class="doc-lead">Filtro por categoria + 3 cards de projeto.</p>
+
+      <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>critique</code> classificou esta como a seção com o pior "veredito de especificidade": categorias de filtro (Branding/UI-UX/Editorial), CTAs ("Ver estudo de caso", "Ver protótipo") e os 3 projetos descreviam uma designer gráfica. Além disso, todos os links de projeto eram <code>href="#"</code> — cliques silenciosos sem destino, um P1 do <code>critique</code>.</dd></dl>
+      <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Reescrever categorias/CTAs/projetos para a realidade de front-end (sem inventar métricas ou clientes) e marcar claramente o que é real (este portfólio) vs. exemplo (2 projetos fictícios) resolve tanto a especificidade quanto a honestidade exigida pelo <code>PRODUCT.md</code>.</dd></dl>
+      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>clarify</code> — a mudança é fundamentalmente de linguagem/rotulagem (o que cada card diz sobre si mesmo), não de estrutura.</dd></dl>
+      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"As categorias e os 3 projetos descrevem uma designer gráfica, não a Rayara dev. Reescreva para front-end/JS/CSS. Marque claramente cada card como 'Projeto real' ou 'Projeto de exemplo' — nunca apresente os 2 fictícios como entregas reais — e não deixe link nenhum ir para lugar nenhum: o real aponta pro GitHub verdadeiro, os de exemplo ficam desabilitados com 'Em breve' em vez de href='#' clicável."</dd></dl>
+
+      <div class="doc-card">
+        <h2 style="margin-top:0">Objetivo</h2>
+        <p>Substituir as 3 categorias de filtro e os 3 projetos por conteúdo de front-end; adicionar um selo (<code>.project-card__badge</code>) distinguindo "Projeto real" de "Projeto de exemplo"; resolver os 2 links mortos restantes com um estado desabilitado explícito em vez de <code>href="#"</code> silencioso.</p>
+
+        <h2>Resultado produzido</h2>
+        <p>Categorias viraram <code>front-end</code>/<code>javascript</code>/<code>css</code>. O primeiro card agora é <strong>real</strong>: "Este portfólio", com link de verdade para <code>github.com/RayaraChambela/portfolio-pessoal</code>. Os outros dois ("Painel de agendamento", "Painel de tarefas") são exemplos fictícios rotulados como tal, com link <code>aria-disabled="true"</code> e texto "Em breve" — não é mais um <code>&lt;a&gt;</code> que finge ser clicável.</p>
+
+        <h2>Evidência</h2>
+        <div class="doc-evidence">
+          Testado ao vivo: os 3 botões de filtro (Todos/Front-end/JavaScript/CSS) filtram corretamente os 3 cards por <code>data-tags</code> (confirmado via inspeção de DOM, <code>visible: true/false</code> mudando junto com o filtro clicado). O link real do GitHub abre a URL verdadeira; os 2 links "Em breve" não navegam para lugar nenhum (<code>pointer-events: none</code> via CSS), então não há mais clique silencioso sem feedback.
+        </div>
+
+        <h2>Análise do resultado</h2>
+        <p>Esta foi, junto com o formulário (ver <a href="contato.html">Contato</a>), a correção de maior impacto no "veredito de especificidade" do <code>critique</code>: a seção deixou de contradizer a própria proposta do site. O selo "Projeto de exemplo" é uma escolha deliberada de honestidade sobre estética — poderia ter sido omitido para parecer mais "completo", mas isso violaria o Princípio de Produto #2 (honestidade acima de hype) registrado no <code>PRODUCT.md</code>.</p>
+
+        <h2>Decisão</h2>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — inclui a decisão consciente de manter 2 dos 3 projetos como "exemplo" em vez de inventar entregas falsas para parecer mais robusto.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

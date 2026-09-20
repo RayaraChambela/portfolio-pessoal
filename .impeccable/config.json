@@ -1,0 +1,28 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "design-system-font-size"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-20T21:12:45.692Z",
+        "reason": "Inter is the DESIGN.md-documented body font at 2 intentional weights (400/600); the overused-font advisory targets unexamined defaults, not an established, documented choice"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "4px",
+        "files": [
+          "processo/processo.css"
+        ],
+        "createdAt": "2026-09-20T21:37:41.113Z",
+        "reason": "Inline <code> chip inside doc tables needs a smaller radius than the 8px system token to look proportional at that tiny size — same micro-exception pattern as the font-size ramp, not drift"
+      }
+    ]
+  }
+}

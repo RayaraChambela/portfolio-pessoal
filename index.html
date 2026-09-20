@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nome Completo — Designer Gráfico(a) & UI/UX | Portfólio</title>
-  <meta name="description" content="Portfólio de Nome Completo, designer gráfico(a) e de produto. Veja trabalhos de branding, UI/UX e design editorial." />
-  <link rel="icon" href="data:,">
+  <title>Rayara Chambela — Desenvolvedora Front-end | Portfólio</title>
+  <meta name="description" content="Portfólio de Rayara Chambela, desenvolvedora front-end em transição de carreira, trazendo visão de produto para código." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
   <!-- ===== Cabeçalho / Navegação ===== -->
   <header class="header" id="topo">
     <div class="container header__bar">
-      <a href="#topo" class="logo">Nome Completo<span class="logo__dot">.</span></a>
+      <a href="#topo" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
 
       <nav class="nav" id="nav">
         <a href="#sobre">Sobre</a>
@@ -30,43 +32,47 @@
           <span aria-hidden="true">🌙</span>
         </button>
         <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-          <span aria-hidden="true">☰</span>
+          <span class="nav-toggle__icon" aria-hidden="true">☰</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- ===== Hero ===== -->
     <section class="hero container" id="inicio">
       <div class="hero__text">
-        <p class="hero__eyebrow">Design gráfico &amp; UI/UX</p>
-        <h1>Sou <span class="highlight">Nome Completo</span>, designer.</h1>
+        <p class="hero__eyebrow">Desenvolvimento Front-end</p>
+        <h1>Sou <span class="highlight">Rayara Chambela</span>, desenvolvedora.</h1>
         <p class="hero__lead">
-          [Espaço para uma frase de efeito sobre o que você cria — ex. "transformo briefings
-          em identidades visuais e interfaces que comunicam com clareza e têm personalidade".]
+          Vim de outra área e migrei para desenvolvimento — trago visão de produto e de
+          processo para o código, não só a técnica. Construo interfaces com HTML, CSS e
+          JavaScript, com atenção a quem realmente vai usar.
         </p>
         <div class="hero__cta">
           <a href="#projetos" class="btn btn--primary">Ver trabalhos</a>
           <a href="#contato" class="btn btn--ghost">Falar comigo</a>
         </div>
       </div>
-      <div class="hero__avatar" aria-hidden="true">🎨</div>
+      <div class="hero__avatar" aria-hidden="true"><span class="hero__avatar-bracket">&lt;</span>RC<span class="hero__avatar-bracket">/&gt;</span></div>
     </section>
 
     <!-- ===== Sobre ===== -->
     <section class="section" id="sobre">
       <div class="container">
-        <h2 class="section__title">Sobre</h2>
+        <span class="section__eyebrow">Sobre</span>
+        <h2 class="section__title">Quem escreve este código</h2>
         <p class="section__text">
-          [Placeholder de biografia — conte sua trajetória: quando começou no design, quais
-          áreas domina (branding, UI/UX, editorial, motion), que tipo de projeto mais gosta
-          de fazer e o que te diferencia como profissional.]
+          Cheguei ao desenvolvimento vindo de outra área — e isso molda como eu trabalho:
+          antes de escrever a primeira linha, quero entender o problema de quem vai usar
+          a interface. Foco em front-end (HTML, CSS e JavaScript), com atenção a
+          responsividade, tema claro/escuro e formulários que realmente funcionam, não só
+          que parecem funcionar.
         </p>
         <ul class="facts">
-          <li><strong>X</strong> anos de experiência em design</li>
-          <li><strong>Y</strong> projetos entregues</li>
-          <li><strong>Z</strong> ferramentas dominadas</li>
+          <li><strong>Em transição</strong> de carreira para dev</li>
+          <li><strong>Front-end</strong> como foco atual</li>
+          <li><strong>Visão de produto</strong> como diferencial</li>
         </ul>
       </div>
     </section>
@@ -74,31 +80,32 @@
     <!-- ===== Habilidades ===== -->
     <section class="section section--alt" id="habilidades">
       <div class="container">
-        <h2 class="section__title">Habilidades</h2>
+        <span class="section__eyebrow">Habilidades</span>
+        <h2 class="section__title">O que eu uso no dia a dia</h2>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <h3>Design Gráfico</h3>
+            <h3>Front-end</h3>
             <ul class="tags">
-              <li>Branding</li><li>Design Editorial</li><li>Ilustração</li>
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
             </ul>
           </div>
           <div class="skill-card">
-            <h3>UI/UX</h3>
+            <h3>Boas práticas</h3>
             <ul class="tags">
-              <li>Wireframes</li><li>Protótipos</li><li>Design System</li>
+              <li>Responsivo</li><li>Tema claro/escuro</li><li>Validação de formulário</li>
             </ul>
           </div>
           <div class="skill-card">
             <h3>Ferramentas</h3>
             <ul class="tags">
-              <li>Figma</li><li>Adobe XD</li><li>Illustrator</li><li>Photoshop</li>
+              <li>Git</li><li>GitHub</li><li>VS Code</li>
             </ul>
           </div>
           <div class="skill-card">
             <h3>Complementares</h3>
             <ul class="tags">
-              <li>Comunicação com cliente</li><li>Gestão de prazos</li><li>Pesquisa com usuários</li>
+              <li>Visão de produto</li><li>Comunicação</li><li>Pesquisa com usuários</li>
             </ul>
           </div>
         </div>
@@ -108,64 +115,71 @@
     <!-- ===== Trabalhos ===== -->
     <section class="section" id="projetos">
       <div class="container">
-        <h2 class="section__title">Trabalhos</h2>
+        <span class="section__eyebrow">Trabalhos</span>
+        <h2 class="section__title">O que eu já construí</h2>
 
         <div class="filters" id="filtros" role="group" aria-label="Filtrar trabalhos por categoria">
-          <button class="filter-btn is-active" data-filter="todos" type="button">Todos</button>
-          <button class="filter-btn" data-filter="branding" type="button">Branding</button>
-          <button class="filter-btn" data-filter="ui-ux" type="button">UI/UX</button>
-          <button class="filter-btn" data-filter="editorial" type="button">Editorial</button>
+          <button class="filter-btn is-active" data-filter="todos" type="button" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="front-end" type="button" aria-pressed="false">Front-end</button>
+          <button class="filter-btn" data-filter="javascript" type="button" aria-pressed="false">JavaScript</button>
+          <button class="filter-btn" data-filter="css" type="button" aria-pressed="false">CSS</button>
         </div>
 
         <div class="projects-grid" id="projetos-grid">
 
-          <article class="project-card project-card--1" data-tags="branding">
+          <article class="project-card project-card--1" data-tags="front-end javascript css">
             <div class="project-card__thumb" aria-hidden="true">
-              <span>🎨</span>
+              <span>💻</span>
             </div>
+            <span class="project-card__badge">Projeto real</span>
             <div class="project-card__body">
-              <h3>Projeto 1</h3>
-              <p>[Descreva aqui o briefing do Projeto 1, o processo criativo e o resultado
-                entregue — ex. identidade visual completa para uma marca.]</p>
+              <h3>Este portfólio</h3>
+              <p>O site que você está vendo agora: página única em HTML/CSS/JS puro, com
+                tema claro/escuro persistido, filtro de projetos e formulário com
+                validação client-side campo a campo.</p>
               <ul class="tags">
-                <li>Branding</li><li>Identidade Visual</li>
+                <li>front-end</li><li>javascript</li><li>css</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="link">Ver estudo de caso</a>
+                <a href="https://github.com/RayaraChambela/portfolio-pessoal" class="link" target="_blank" rel="noopener">Ver no GitHub</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card project-card--2" data-tags="ui-ux">
+          <article class="project-card project-card--2" data-tags="javascript">
             <div class="project-card__thumb" aria-hidden="true">
-              <span>📱</span>
+              <span>🗓️</span>
             </div>
+            <span class="project-card__badge">Projeto de exemplo</span>
             <div class="project-card__body">
-              <h3>Projeto 2</h3>
-              <p>[Descreva aqui o briefing do Projeto 2, o processo criativo e o resultado
-                entregue — ex. design de interface para um aplicativo.]</p>
+              <h3>Painel de agendamento</h3>
+              <p>Exemplo ilustrativo de interface para marcação de horários com
+                calendário e confirmação por e-mail — protótipo de front-end para
+                demonstrar organização de estado em JavaScript puro.</p>
               <ul class="tags">
-                <li>UI/UX</li><li>Figma</li>
+                <li>javascript</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="link">Ver protótipo</a>
+                <a href="#" class="link" aria-disabled="true">Em breve</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card project-card--3" data-tags="editorial">
+          <article class="project-card project-card--3" data-tags="css">
             <div class="project-card__thumb" aria-hidden="true">
-              <span>📖</span>
+              <span>📋</span>
             </div>
+            <span class="project-card__badge">Projeto de exemplo</span>
             <div class="project-card__body">
-              <h3>Projeto 3</h3>
-              <p>[Descreva aqui o briefing do Projeto 3, o processo criativo e o resultado
-                entregue — ex. diagramação editorial de uma revista ou catálogo.]</p>
+              <h3>Painel de tarefas</h3>
+              <p>Exemplo ilustrativo de lista de tarefas com filtro por status e tema
+                responsivo — foco em CSS Grid/Flexbox e em pequenos detalhes de
+                microinteração.</p>
               <ul class="tags">
-                <li>Editorial</li><li>Diagramação</li>
+                <li>css</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="link">Ver estudo de caso</a>
+                <a href="#" class="link" aria-disabled="true">Em breve</a>
               </div>
             </div>
           </article>
@@ -180,35 +194,36 @@
     <section class="section section--alt" id="contato">
       <div class="container contact">
         <div class="contact__info">
-          <h2 class="section__title">Contato</h2>
+          <span class="section__eyebrow">Contato</span>
+          <h2 class="section__title">Vamos conversar?</h2>
           <p class="section__text">
-            Vamos conversar sobre seu próximo projeto? Fale por e-mail ou pelas redes abaixo.
+            Me manda uma mensagem por e-mail, pelo formulário ao lado, ou vê meu código
+            no GitHub.
           </p>
           <ul class="contact__links">
-            <li><a href="mailto:seuemail@exemplo.com">✉️ seuemail@exemplo.com</a></li>
-            <li><a href="#" target="_blank" rel="noopener">🎨 Behance</a></li>
-            <li><a href="#" target="_blank" rel="noopener">🏀 Dribbble</a></li>
-            <li><a href="#" target="_blank" rel="noopener">💼 LinkedIn</a></li>
+            <li><a href="mailto:rachambela@gmail.com">✉️ rachambela@gmail.com</a></li>
+            <li><a href="https://github.com/RayaraChambela" target="_blank" rel="noopener">🐙 GitHub</a></li>
+            <li><a href="#" aria-disabled="true">💼 LinkedIn (em breve)</a></li>
           </ul>
         </div>
 
         <form class="contact-form" id="contact-form" novalidate>
           <div class="field">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required />
-            <span class="field__error" data-error-for="nome"></span>
+            <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="erro-nome" aria-invalid="false" />
+            <span class="field__error" id="erro-nome" data-error-for="nome" role="alert"></span>
           </div>
 
           <div class="field">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
-            <span class="field__error" data-error-for="email"></span>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="erro-email" aria-invalid="false" />
+            <span class="field__error" id="erro-email" data-error-for="email" role="alert"></span>
           </div>
 
           <div class="field">
             <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-            <span class="field__error" data-error-for="mensagem"></span>
+            <textarea id="mensagem" name="mensagem" rows="4" required aria-describedby="erro-mensagem" aria-invalid="false"></textarea>
+            <span class="field__error" id="erro-mensagem" data-error-for="mensagem" role="alert"></span>
           </div>
 
           <button type="submit" class="btn btn--primary">Enviar mensagem</button>
@@ -220,12 +235,12 @@
 
   <footer class="footer">
     <div class="container footer__bar">
-      <p>&copy; <span id="ano-atual"></span> Nome Completo. Todos os direitos reservados.</p>
+      <p>&copy; <span id="ano-atual"></span> Rayara Chambela. Todos os direitos reservados. ·
+        <a href="processo/index.html">Processo de design com Impeccable</a></p>
       <div class="footer__socials">
-        <a href="#" target="_blank" rel="noopener" aria-label="Behance">🎨</a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Dribbble">🏀</a>
-        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
-        <a href="mailto:seuemail@exemplo.com" aria-label="E-mail">✉️</a>
+        <a href="https://github.com/RayaraChambela" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
+        <a href="#" aria-disabled="true" aria-label="LinkedIn (em breve)">💼</a>
+        <a href="mailto:rachambela@gmail.com" aria-label="E-mail">✉️</a>
       </div>
     </div>
   </footer>

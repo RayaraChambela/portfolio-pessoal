@@ -1,0 +1,9 @@
+# Impeccable skill installation (tooling, not project content)
+.claude/
+
+# Impeccable local/runtime state (not meaningful to share)
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/live/roots.json
+.impeccable/live/sessions/
+.impeccable/live/accept-receipts/

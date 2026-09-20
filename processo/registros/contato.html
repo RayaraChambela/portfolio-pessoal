@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registro: Contato — Processo Impeccable</title>
+<meta name="description" content="Registro da aplicação do comando harden na seção Contato do portfólio." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../processo.css" />
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
+      <nav>
+        <a href="../index.html">Processo</a>
+        <a href="../catalogo-comandos.html">Catálogo</a>
+        <a href="../../index.html">Portfólio</a>
+      </nav>
+    </div>
+  </header>
+  <main class="doc-main">
+    <div class="container" style="max-width: 760px">
+      <a href="../index.html" class="doc-back">← Voltar ao processo</a>
+      <span class="doc-eyebrow">Registro de aplicação · Seção 6/6</span>
+      <h1 class="doc-title">Contato</h1>
+      <p class="doc-lead">Informações de contato + formulário com validação client-side.</p>
+
+      <dl class="doc-field"><dt>Problema observado</dt><dd>O achado mais grave dos dois diagnósticos (P0 no <code>critique</code>, integridade de implementação em 1/4 no <code>audit</code>): o formulário exibia "Mensagem enviada! (envio simulado nesta entrega)" mesmo sem nenhum back-end real — um estado de sucesso fabricado. Os campos de erro também não tinham <code>aria-describedby</code>/<code>aria-invalid</code>, então um leitor de tela não conseguia associar o erro ao campo.</dd></dl>
+      <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Um formulário sem back-end pode ainda ser honesto e funcional se, em vez de fingir um envio, ele disparar uma ação real (abrir o cliente de e-mail do visitante já preenchido). Ligar os erros via ARIA resolve a lacuna de acessibilidade sem mudar a lógica de validação.</dd></dl>
+      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>harden</code> — preparar a interface para a realidade (sem back-end) em vez de fingir uma condição que não existe.</dd></dl>
+      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O formulário finge que enviou a mensagem mas não há back-end nenhum — isso é um estado de sucesso fabricado, um dos P0 mais graves do critique. Não simule sucesso: dispare uma ação real (mailto: com os dados preenchidos) e seja honesto na mensagem sobre o que está acontecendo. Também ligue aria-describedby e aria-invalid nos campos de erro."</dd></dl>
+
+      <div class="doc-card">
+        <h2 style="margin-top:0">Objetivo</h2>
+        <p>Remover a mensagem de sucesso fabricada; substituir por uma ação real (<code>window.location.href = "mailto:..."</code> com nome/e-mail/mensagem já preenchidos) e uma mensagem honesta sobre o que está acontecendo; adicionar <code>id</code>+<code>aria-describedby</code>+<code>aria-invalid</code> aos 3 campos do formulário.</p>
+
+        <h2>Resultado produzido</h2>
+        <p><code>js/script.js</code>: ao submeter um formulário válido, o código monta um link <code>mailto:rachambela@gmail.com</code> com assunto e corpo preenchidos a partir dos campos, exibe "Abrindo seu app de e-mail para enviar a mensagem..." e navega para esse link — nada é fingido. <code>index.html</code>: cada <code>&lt;span class="field__error"&gt;</code> ganhou <code>id</code> único e <code>role="alert"</code>; cada input/textarea ganhou <code>aria-describedby</code> apontando pro erro correspondente e <code>aria-invalid</code> dinâmico.</p>
+
+        <h2>Evidência</h2>
+        <div class="doc-evidence">
+          Testado ao vivo: submeter o formulário vazio resulta em <code>nome.getAttribute('aria-invalid') === "true"</code> e <code>nome.getAttribute('aria-describedby') === "erro-nome"</code>, com o texto "Informe seu nome completo." de fato presente em <code>#erro-nome</code> — confirmando a ligação ARIA real, não apenas a presença dos atributos no HTML estático.
+        </div>
+
+        <h2>Análise do resultado</h2>
+        <p>Esta foi a correção mais delicada do projeto: "consertar" um formulário sem back-end tem duas saídas ruins (fingir que funciona, ou simplesmente desabilitar o formulário). O <code>mailto:</code> é um meio-termo honesto — não é uma solução de produção definitiva (por isso o <code>PRODUCT.md</code> já registra que uma próxima entrega deve trocar por um serviço real como Formspree/EmailJS), mas nunca mente sobre o que aconteceu, que era o problema P0 original.</p>
+
+        <h2>Decisão</h2>
+        <p><span class="doc-decision doc-decision--adjusted">↻ Ajustado</span> — resolvido para esta entrega via <code>mailto:</code> honesto; registrado como melhoria futura (serviço de e-mail real) no <code>PRODUCT.md</code>, não tratado como definitivo.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

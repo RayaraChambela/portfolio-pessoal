@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registro: Header/Navegação — Processo Impeccable</title>
+<meta name="description" content="Registro da aplicação do comando adapt na seção de cabeçalho e navegação do portfólio." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../processo.css" />
+</head>
+<body>
+  <header class="doc-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">Rayara Chambela<span class="logo__dot">.</span></a>
+      <nav>
+        <a href="../index.html">Processo</a>
+        <a href="../catalogo-comandos.html">Catálogo</a>
+        <a href="../../index.html">Portfólio</a>
+      </nav>
+    </div>
+  </header>
+  <main class="doc-main">
+    <div class="container" style="max-width: 760px">
+      <a href="../index.html" class="doc-back">← Voltar ao processo</a>
+      <span class="doc-eyebrow">Registro de aplicação · Seção 1/6</span>
+      <h1 class="doc-title">Header / Navegação</h1>
+      <p class="doc-lead">Cabeçalho fixo, logo, navegação por âncoras, alternador de tema e menu hambúrguer mobile.</p>
+
+      <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>audit</code> e o <code>critique</code> confirmaram ao vivo que o menu hambúrguer mobile nunca troca o glifo (☰) para indicar estado aberto/fechado — a persona "Casey" (mobile) não tem confirmação visual além do próprio menu aparecer. Também faltava <code>aria-pressed</code> nos filtros de projeto (afeta a seção Trabalhos, mas o padrão de "estado sem sinalização" nasce aqui, no controle de navegação).</dd></dl>
+      <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Se o botão do menu trocar de ícone e de <code>aria-label</code> ao abrir/fechar, tanto usuários visuais quanto de leitor de tela recebem confirmação de estado — reduzindo a insegurança de "cliquei, funcionou?" no mobile.</dd></dl>
+      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>adapt</code> — repensar o comportamento para o contexto mobile/toque, não só herdar o padrão desktop.</dd></dl>
+      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O menu hambúrguer não muda de ícone quando abre. Adapte para o contexto mobile: o botão precisa confirmar visualmente seu próprio estado (aberto/fechado), com <code>aria-expanded</code> e <code>aria-label</code> coerentes, e os alvos de toque do rodapé precisam ter pelo menos 44×44px."</dd></dl>
+
+      <div class="doc-card">
+        <h2 style="margin-top:0">Objetivo</h2>
+        <p>Dar ao botão de menu um estado visual e semântico verdadeiro (ícone + <code>aria-label</code> + <code>aria-expanded</code>), e garantir que os alvos de toque do rodapé atinjam o mínimo de 44×44px recomendado para adaptação móvel.</p>
+
+        <h2>Resultado produzido</h2>
+        <p><code>js/script.js</code>: o clique no botão agora troca o glifo entre <code>☰</code> e <code>✕</code>, atualiza <code>aria-expanded</code> e alterna o <code>aria-label</code> entre "Abrir menu"/"Fechar menu". Clicar em qualquer link do menu no mobile também reseta o ícone. Em <code>css/style.css</code>, os links do rodapé (<code>.footer__socials a</code>) ganharam <code>width/height: 44px</code> e um alvo de toque explícito.</p>
+
+        <h2>Evidência</h2>
+        <div class="doc-evidence">
+          Verificado ao vivo no navegador (viewport 375px): antes, <code>toggle.click()</code> alternava <code>aria-expanded</code> mas o <code>&lt;span&gt;</code> do ícone permanecia <code>"☰"</code> em ambos os estados. Depois da correção, o mesmo teste mostra <code>iconText: "✕"</code> e <code>ariaLabel: "Fechar menu"</code> no estado aberto, revertendo corretamente ao fechar.
+        </div>
+
+        <h2>Análise do resultado</h2>
+        <p>A mudança é pequena em código (poucas linhas de JS) mas resolve um problema de confiança real: sem ela, o único sinal de que o menu abriu é o próprio menu aparecer — o que falha se a animação for perdida em conexões lentas ou se o usuário olhar primeiro para o botão. Não há efeito colateral: a função original (abrir/fechar) continua idêntica.</p>
+
+        <h2>Decisão</h2>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — comportamento incorporado à v2 sem ressalvas.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
