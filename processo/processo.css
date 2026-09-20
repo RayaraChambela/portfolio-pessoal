@@ -161,10 +161,19 @@ table.doc-table tr:hover td { background: color-mix(in srgb, var(--bg-alt) 60%, 
 .doc-evidence {
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--primary);
   border-radius: var(--radius);
   padding: 14px 18px;
   font-size: .92rem;
+}
+.doc-evidence::before {
+  content: "Evidência observada";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
 }
 
 .doc-decision {

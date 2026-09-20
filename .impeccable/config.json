@@ -22,6 +22,15 @@
         ],
         "createdAt": "2026-09-20T21:37:41.113Z",
         "reason": "Inline <code> chip inside doc tables needs a smaller radius than the 8px system token to look proportional at that tiny size — same micro-exception pattern as the font-size ramp, not drift"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "processo/**/*.html"
+        ],
+        "createdAt": "2026-09-20T21:50:12.474Z",
+        "reason": "Inter is the DESIGN.md-documented body font at 2 intentional weights (400/600), reused consistently across the processo/ docs pages for the same established system; not an unexamined default"
       }
     ]
   }

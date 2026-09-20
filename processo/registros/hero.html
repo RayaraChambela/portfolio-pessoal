@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Registro: Hero — Processo Impeccable</title>
+<title>Registro: Hero · Processo Impeccable</title>
 <meta name="description" content="Registro da aplicação dos comandos typeset e colorize na seção Hero do portfólio." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,28 +29,28 @@
       <h1 class="doc-title">Hero (Início)</h1>
       <p class="doc-lead">Primeira dobra: eyebrow, headline, texto de apoio, CTAs e avatar.</p>
 
-      <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>critique</code> (Assessment A) apontou hierarquia tipográfica achatada entre o H1 do hero (2.6rem no topo da escala fluida) e os H2 de seção (1.8rem fixo) — pouca distância de papel entre "headline" e "título de seção". Em paralelo, o avatar do hero usava um gradiente de duas cores (coral→azul) que o próprio <code>DESIGN.md</code>, recém-escrito, já marcava como quebra da "Regra do Acento Único".</dd></dl>
+      <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>critique</code> (Assessment A) apontou hierarquia tipográfica achatada entre o H1 do hero (2.6rem no topo da escala fluida) e os H2 de seção (1.8rem fixo). Isso deixava pouca distância de papel entre "headline" e "título de seção". Em paralelo, o avatar do hero usava um gradiente de duas cores (coral→azul) que o próprio <code>DESIGN.md</code>, recém-escrito, já marcava como quebra da "Regra do Acento Único".</dd></dl>
       <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Aumentar o contraste de escala entre H1 e H2 (typeset) deixa mais óbvio o que é a assinatura de entrada vs. título de seção; remover o gradiente e usar só o acento coral sólido (colorize) devolve o avatar à mesma lógica de cor do resto do site.</dd></dl>
       <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>typeset</code> (escala do H1) + <code>colorize</code> (avatar sem gradiente).</dd></dl>
-      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O H1 do hero e os H2 de seção estão perto demais em peso visual — aumente a escala do H1 (typeset) para reforçar que é o papel de maior hierarquia da página. Separadamente, o avatar usa um gradiente coral→azul que quebra a regra de acento único do DESIGN.md — substitua por preenchimento sólido coral (colorize), sem inventar uma segunda cor oficial."</dd></dl>
+      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O H1 do hero e os H2 de seção estão perto demais em peso visual. Aumente a escala do H1 (typeset) para reforçar que é o papel de maior hierarquia da página. Separadamente, o avatar usa um gradiente coral→azul que quebra a regra de acento único do DESIGN.md. Substitua por preenchimento sólido coral (colorize), sem inventar uma segunda cor oficial."</dd></dl>
 
       <div class="doc-card">
         <h2 style="margin-top:0">Objetivo</h2>
         <p>Typeset: `clamp(1.8rem, 4vw, 2.6rem)` → `clamp(2.1rem, 5vw, 3.2rem)` no H1, e leve redução do H2 de seção (1.8rem → 1.6rem), abrindo mais distância de papel. Colorize: avatar de `linear-gradient(135deg, var(--primary), #9aa8ff)` para `background: var(--primary)` sólido.</p>
 
         <h2>Resultado produzido</h2>
-        <p>Ambas as mudanças aplicadas em <code>css/style.css</code>. O avatar, mais tarde, teve seu conteúdo textual também substituído via o comando <code>live</code> (registrado à parte em <a href="processo-geral.html">Processo geral</a>) — mas a base de cor sólida definida aqui por <code>colorize</code> é a que sustentou aquela iteração.</p>
+        <p>Ambas as mudanças aplicadas em <code>css/style.css</code>. O avatar, mais tarde, teve seu conteúdo textual também substituído via o comando <code>live</code> (registrado à parte em <a href="processo-geral.html">Processo geral</a>); a base de cor sólida definida aqui por <code>colorize</code> sustentou aquela iteração.</p>
 
         <h2>Evidência</h2>
         <div class="doc-evidence">
-          Detector (<code>design-system-color</code>) parou de reportar <code>#9aa8ff</code> como cor fora do <code>DESIGN.md</code> depois da mudança — de 9 achados de cor para 0. Visualmente, capturado em desktop e mobile (light/dark) no navegador: o H1 agora ocupa nitidamente mais espaço vertical que os títulos de seção, e o avatar é um bloco coral sólido sem transição de matiz.
+          Detector (<code>design-system-color</code>) parou de reportar <code>#9aa8ff</code> como cor fora do <code>DESIGN.md</code> depois da mudança: de 9 achados de cor para 0. Visualmente, capturado em desktop e mobile (light/dark) no navegador: o H1 agora ocupa nitidamente mais espaço vertical que os títulos de seção, e o avatar é um bloco coral sólido sem transição de matiz.
         </div>
 
         <h2>Análise do resultado</h2>
-        <p>O ganho de hierarquia é sutil mas real: ao "semicerrar os olhos" na página renderizada, o H1 se destaca antes dos H2 — o que não era claramente verdade antes. A remoção do gradiente teve o benefício colateral de simplificar a regra de cor do projeto para "só coral", o que facilita qualquer decisão de cor futura (não é preciso perguntar "esse azul do avatar é oficial?").</p>
+        <p>O ganho de hierarquia é sutil mas real: ao "semicerrar os olhos" na página renderizada, o H1 se destaca antes dos H2, o que não era claramente verdade antes. A remoção do gradiente teve o benefício colateral de simplificar a regra de cor do projeto para "só coral", o que facilita qualquer decisão de cor futura (não é preciso perguntar "esse azul do avatar é oficial?").</p>
 
         <h2>Decisão</h2>
-        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — ambas as mudanças permanecem na v2. O conteúdo do avatar (o que fica dentro do bloco coral) foi refinado depois via <code>live</code>.</p>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span>: ambas as mudanças permanecem na v2. O conteúdo do avatar (o que fica dentro do bloco coral) foi refinado depois via <code>live</code>.</p>
       </div>
     </div>
   </main>

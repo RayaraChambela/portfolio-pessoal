@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Registro: Habilidades — Processo Impeccable</title>
+<title>Registro: Habilidades · Processo Impeccable</title>
 <meta name="description" content="Registro da aplicação do comando layout na seção Habilidades do portfólio." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
 
       <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>DESIGN.md</code> documentava um espaçamento essencialmente ad hoc: <code>gap: 20px</code> escrito como valor solto na seção de habilidades, sem relação nomeada com o resto dos espaçamentos do site (24px entre CTAs, 48px de padding de seção). Não havia uma escala explícita — cada número existia isoladamente.</dd></dl>
       <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Nomear uma escala de espaçamento (sm/md/lg/xl) e aplicá-la ao grid de habilidades torna o ritmo espacial intencional e reutilizável, em vez de um valor que só existe porque "parecia bom" naquele lugar.</dd></dl>
-      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>layout</code> — diagnosticar a estrutura espacial antes de mover qualquer caixa, e introduzir uma escala nomeada.</dd></dl>
+      <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>layout</code>: diagnosticar a estrutura espacial antes de mover qualquer caixa, e introduzir uma escala nomeada.</dd></dl>
       <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O espaçamento do grid de habilidades (20px) é um valor solto, sem escala nomeada no DESIGN.md. Diagnostique o ritmo espacial da página e introduza tokens de espaçamento (sm/md/lg/xl) coerentes com os valores que já existem (8/20/24/48px), aplicando o token correto no grid."</dd></dl>
 
       <div class="doc-card">
@@ -50,7 +50,7 @@
         <p>Esta é uma correção de <em>sistema</em>, não de aparência: visualmente nada mudou (o objetivo do <code>layout</code> aqui não era redesenhar o grid, que já passava no "teste do olho semicerrado", mas remover uma dívida de manutenção). O card genuinamente bem-sucedido de <code>layout</code> é impedir que o próximo desenvolvedor (ou eu, numa sessão futura) precise decidir de novo "20px ou 24px?" nesse tipo de grid.</p>
 
         <h2>Decisão</h2>
-        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — sem mudança visual perceptível, mas a base de tokens fica disponível para <code>extract</code> reaproveitar (ver <a href="processo-geral.html">Processo geral</a>).</p>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span>: sem mudança visual perceptível, mas a base de tokens fica disponível para <code>extract</code> reaproveitar (ver <a href="processo-geral.html">Processo geral</a>).</p>
       </div>
     </div>
   </main>

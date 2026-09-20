@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Registro: Processo Geral — Processo Impeccable</title>
+<title>Registro: Processo Geral · Processo Impeccable</title>
 <meta name="description" content="Registro dos 8 comandos de nível de projeto: init, document, shape, critique, audit, extract, live e polish." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +28,8 @@
       <span class="doc-eyebrow">Registro de aplicação · Nível de projeto</span>
       <h1 class="doc-title">Processo geral</h1>
       <p class="doc-lead">
-        Os 8 comandos que não pertencem a uma única seção visual — planejamento,
-        diagnóstico, sistematização e fechamento — aplicados ao portfólio como um todo,
+        Os 8 comandos que não pertencem a uma única seção visual (planejamento,
+        diagnóstico, sistematização e fechamento), aplicados ao portfólio como um todo,
         na ordem em que aconteceram.
       </p>
 
@@ -37,8 +37,8 @@
         <span class="doc-label doc-label--command">1 · init</span>
         <h2 style="margin-top:8px">Capturar quem é a Rayara e o que o portfólio precisa comunicar</h2>
         <p><strong>Objetivo:</strong> registrar em <code>PRODUCT.md</code> quem usa o site (recrutadores/clientes avaliando em &lt;2min), o que ele precisa provar (transição de carreira como diferencial) e o que não pode ser inventado (projetos reais, métricas).</p>
-        <p><strong>Prompt/orientação:</strong> interview estruturada em 2 rodadas — stack técnica a exibir (HTML/CSS/JS, confirmado, sem frameworks não pedidos) e posicionamento (transição de carreira como força, não lacuna).</p>
-        <p><strong>Evidência:</strong> <code>PRODUCT.md</code> escrito com todas as seções do schema oficial preenchidas com fatos confirmados (nunca prosa genérica) — nenhuma seção deixada com texto de exemplo.</p>
+        <p><strong>Prompt/orientação:</strong> interview estruturada em 2 rodadas, stack técnica a exibir (HTML/CSS/JS, confirmado, sem frameworks não pedidos) e posicionamento (transição de carreira como força, não lacuna).</p>
+        <p><strong>Evidência:</strong> <code>PRODUCT.md</code> escrito com todas as seções do schema oficial preenchidas com fatos confirmados (nunca prosa genérica), nenhuma seção deixada com texto de exemplo.</p>
         <p><strong>Análise:</strong> sem essa etapa, toda decisão de conteúdo depois (Sobre, Habilidades, Trabalhos) teria sido um palpite. O ponto mais importante que saiu daqui — "transição de carreira é diferencial, não esconder" — voltou a aparecer em pelo menos 3 registros de seção.</p>
         <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> como fonte de verdade para todo o resto do projeto.</p>
       </div>
@@ -47,10 +47,10 @@
         <span class="doc-label doc-label--command">2 · document</span>
         <h2 style="margin-top:8px">Capturar o sistema de design da v1 antes de mudar qualquer coisa</h2>
         <p><strong>Objetivo:</strong> extrair cores, tipografia, raio, sombra e componentes do CSS existente para <code>DESIGN.md</code> + sidecar <code>.impeccable/design.json</code>, documentando também desvios já visíveis (gradientes fora do acento único).</p>
-        <p><strong>Prompt/orientação:</strong> modo scan (código já existe); 2 rodadas de perguntas qualitativas confirmaram o norte criativo ("O Sinal Vivo") e a personalidade ("suave e confiável" na v1 — depois revisada para "técnica e direta" no critique).</p>
-        <p><strong>Evidência:</strong> <code>DESIGN.md</code> escrito com as 8 seções canônicas do formato oficial, incluindo uma "Regra do Acento Único" que nomeia explicitamente os 4 gradientes como desvio a corrigir — isso foi usado depois para justificar a correção em <a href="hero.html">Hero</a>.</p>
+        <p><strong>Prompt/orientação:</strong> modo scan (código já existe); 2 rodadas de perguntas qualitativas confirmaram o norte criativo ("O Sinal Vivo") e a personalidade ("suave e confiável" na v1, depois revisada para "técnica e direta" no critique).</p>
+        <p><strong>Evidência:</strong> <code>DESIGN.md</code> escrito com as 8 seções canônicas do formato oficial, incluindo uma "Regra do Acento Único" que nomeia explicitamente os 4 gradientes como desvio a corrigir. Isso foi usado depois para justificar a correção em <a href="hero.html">Hero</a>.</p>
         <p><strong>Análise:</strong> documentar a v1 <em>antes</em> de mudar permitiu comparar objetivamente "o que era regra" vs. "o que era acidente" quando o critique trouxe evidência nova.</p>
-        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--adjusted">↻ Ajustado</span> — o DESIGN.md foi reescrito uma segunda vez após o critique (mudança de personalidade e paleta de raio), então este documento também serviu de baseline para medir a extensão da mudança.</p>
+        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--adjusted">↻ Ajustado</span>: o DESIGN.md foi reescrito uma segunda vez após o critique (mudança de personalidade e paleta de raio), então este documento também serviu de baseline para medir a extensão da mudança.</p>
       </div>
 
       <div class="doc-card">
@@ -58,8 +58,8 @@
         <h2 style="margin-top:8px">Confirmar o escopo da v2 antes de tocar em código</h2>
         <p><strong>Objetivo:</strong> obter confirmação explícita do escopo (trocar persona, corrigir desvios de design já documentados, sem redesenho estrutural) antes de qualquer edição.</p>
         <p><strong>Prompt/orientação:</strong> brief de 3 pontos apresentado para confirmação em rodada única (job/audiência/saída já estavam claros do <code>init</code>, não precisou de segunda rodada).</p>
-        <p><strong>Evidência:</strong> o usuário confirmou o brief sem pedir correção — sinal de que a leitura do escopo (conteúdo real + correções pontuais, sem mexer na estrutura de seções) estava certa.</p>
-        <p><strong>Análise:</strong> a linha "sem redesenho estrutural" acabou sendo o limite que impediu, por exemplo, transformar o site em multi-página — uma tentação real dado o volume de conteúdo novo (catálogo + registros).</p>
+        <p><strong>Evidência:</strong> o usuário confirmou o brief sem pedir correção, sinal de que a leitura do escopo (conteúdo real + correções pontuais, sem mexer na estrutura de seções) estava certa.</p>
+        <p><strong>Análise:</strong> a linha "sem redesenho estrutural" acabou sendo o limite que impediu, por exemplo, transformar o site em multi-página, uma tentação real dado o volume de conteúdo novo (catálogo + registros).</p>
         <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> como contrato de escopo para toda a v2.</p>
       </div>
 
@@ -69,8 +69,8 @@
         <p><strong>Objetivo:</strong> obter uma lista priorizada (P0–P3) de problemas reais, combinando julgamento de design com evidência verificável no navegador.</p>
         <p><strong>Prompt/orientação:</strong> 2 sub-agentes isolados (Assessment A: review; Assessment B: detector + navegador), sem contato entre si, sintetizados depois em um único relatório.</p>
         <p><strong>Evidência:</strong> <strong>21/32 (66%, Aceitável)</strong> no Design Health Score; 3 P0 (conteúdo errado, formulário mentiroso, placeholders), 1 P1 (links mortos), 2 P2, 2 P3. Persistido em <code>.impeccable/critique/2026-09-20T20-53-01Z__index-html.md</code>.</p>
-        <p><strong>Análise:</strong> o ponto mais valioso não foi nenhum achado isolado, mas a <em>convergência</em> entre os dois agentes — ambos, independentemente, sinalizaram o formulário mentiroso e a identidade errada como os problemas mais graves, o que aumenta a confiança de que não eram ruído.</p>
-        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> como backlog — os 8 achados viraram, um a um, os comandos aplicados nas 6 seções.</p>
+        <p><strong>Análise:</strong> o ponto mais valioso não foi nenhum achado isolado, mas a <em>convergência</em> entre os dois agentes, ambos, independentemente, sinalizaram o formulário mentiroso e a identidade errada como os problemas mais graves, o que aumenta a confiança de que não eram ruído.</p>
+        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> como backlog: os 8 achados viraram, um a um, os comandos aplicados nas 6 seções.</p>
       </div>
 
       <div class="doc-card">
@@ -78,18 +78,18 @@
         <h2 style="margin-top:8px">Checagem técnica de a11y, performance, tema, responsivo e integridade</h2>
         <p><strong>Objetivo:</strong> números verificáveis (não só julgamento) sobre acessibilidade, tema, responsividade e coerência de implementação.</p>
         <p><strong>Prompt/orientação:</strong> reaproveitou a evidência de navegador já coletada pelo critique (mesma sessão de diagnóstico), somada a uma nova varredura do detector incluindo CSS/JS.</p>
-        <p><strong>Evidência:</strong> <strong>12/20 (Aceitável)</strong> — Acessibilidade 2/4, Performance 3/4, Theming 3/4, Responsivo 3/4, Integridade de implementação 1/4 (nota mais baixa, por causa do estado de sucesso fabricado do formulário).</p>
-        <p><strong>Análise:</strong> a nota baixa de "Integridade de implementação" foi o sinal mais acionável do audit — não é uma métrica comum de auditoria técnica (contraste, performance), mas capturou exatamente o problema que o <code>critique</code> também viu por outro ângulo (P0 do formulário).</p>
+        <p><strong>Evidência:</strong> <strong>12/20 (Aceitável)</strong>, Acessibilidade 2/4, Performance 3/4, Theming 3/4, Responsivo 3/4, Integridade de implementação 1/4 (nota mais baixa, por causa do estado de sucesso fabricado do formulário).</p>
+        <p><strong>Análise:</strong> a nota baixa de "Integridade de implementação" foi o sinal mais acionável do audit, não é uma métrica comum de auditoria técnica (contraste, performance), mas capturou exatamente o problema que o <code>critique</code> também viu por outro ângulo (P0 do formulário).</p>
         <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> como segundo backlog, complementar ao critique (achados de acessibilidade específicos que o critique só tocou por cima).</p>
       </div>
 
       <div class="doc-card">
         <span class="doc-label doc-label--command">6 · extract</span>
         <h2 style="margin-top:8px">Consolidar o sistema de design final (v2) no sidecar</h2>
-        <p><strong>Objetivo:</strong> depois de todas as correções pontuais, reescrever <code>.impeccable/design.json</code> para refletir o estado real (raio 8px, sem gradiente, cores semânticas, regra de foco visível) — não deixar o sistema documentado ficar defasado do código.</p>
+        <p><strong>Objetivo:</strong> depois de todas as correções pontuais, reescrever <code>.impeccable/design.json</code> para refletir o estado real (raio 8px, sem gradiente, cores semânticas, regra de foco visível), não deixar o sistema documentado ficar defasado do código.</p>
         <p><strong>Prompt/orientação:</strong> reescrita de todo o sidecar (cores semânticas <code>error</code>/<code>success</code>, componentes com foco visível, nova "Regra do Foco Visível" nomeada a partir do padrão repetido em 4+ componentes).</p>
-        <p><strong>Evidência:</strong> o hook do próprio Impeccable havia avisado "<code>DESIGN.md</code> is newer than <code>design.json</code>" — depois da execução desse comando, o aviso não reaparece mais.</p>
-        <p><strong>Análise:</strong> a "Regra do Foco Visível" é um caso real de extração válida: o padrão (anel de foco 2px sólido cor de acento) apareceu de forma independente em botões, links, filtros e inputs — 4+ repetições com a mesma intenção, o limiar que o próprio comando define para promover algo a regra de sistema.</p>
+        <p><strong>Evidência:</strong> o hook do próprio Impeccable havia avisado "<code>DESIGN.md</code> is newer than <code>design.json</code>", depois da execução desse comando, o aviso não reaparece mais.</p>
+        <p><strong>Análise:</strong> a "Regra do Foco Visível" é um caso real de extração válida: o padrão (anel de foco 2px sólido cor de acento) apareceu de forma independente em botões, links, filtros e inputs, 4+ repetições com a mesma intenção, o limiar que o próprio comando define para promover algo a regra de sistema.</p>
         <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span>.</p>
       </div>
 
@@ -97,20 +97,20 @@
         <span class="doc-label doc-label--command">7 · live</span>
         <h2 style="margin-top:8px">Iteração visual ao vivo no avatar do hero</h2>
         <p><strong>Objetivo:</strong> gerar 3 variações reais do avatar do hero (elemento pequeno, 0 parâmetros por ser "leaf") e aceitar a que melhor comunicasse "personalidade técnica", sem quebrar a identidade (acento único, mono, raio 8px).</p>
-        <p><strong>Prompt/orientação:</strong> "Substitua o monograma RC por algo com mais personalidade técnica, mantendo só o acento coral (sem gradiente) e cantos de 8px" — modo freeform, 3 eixos diferentes: tipográfico/decorativo (<code>&lt;RC/&gt;</code>), estrutural (duas linhas estilo terminal) e estratégia de cor (contorno em vez de preenchimento).</p>
+        <p><strong>Prompt/orientação:</strong> "Substitua o monograma RC por algo com mais personalidade técnica, mantendo só o acento coral (sem gradiente) e cantos de 8px", modo freeform, 3 eixos diferentes: tipográfico/decorativo (<code>&lt;RC/&gt;</code>), estrutural (duas linhas estilo terminal) e estratégia de cor (contorno em vez de preenchimento).</p>
         <p><strong>Evidência:</strong> evento <code>generate</code> confirmado pelo servidor com o elemento real (<code>hero__avatar</code>) e os 3 <code>data-impeccable-variant</code> montados no navegador; evento <code>accept</code> da variante 1 (<code>&lt;RC/&gt;</code>) confirmado, seguido da limpeza de "carbonize" (CSS movido para <code>style.css</code>, marcadores removidos) verificada por <code>live-complete.mjs</code> retornando <code>phase: "completed"</code> e por uma varredura manual sem nenhum resíduo <code>data-impeccable-*</code> no código-fonte.</p>
-        <p><strong>Análise:</strong> das 3 variantes, a vencedora (<code>&lt;RC/&gt;</code>) passou no teste do olho semicerrado (mesmo acento, mesma família, mesmo raio) e ainda comunicou literalmente "isto é código" — mais alinhado ao objetivo do que a variante de contorno (perdia peso visual) ou a de duas linhas (reduzia legibilidade a distância). O maior obstáculo real não foi de design, mas de automação: o picker do live mode exige um evento de <code>hover</code> real antes do clique de seleção (senão o clique não registra) — descoberto por tentativa e erro e documentado aqui para not repetir a investigação.</p>
-        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> — variante 1 (<code>&lt;RC/&gt;</code>) integrada permanentemente ao <code>index.html</code>/<code>style.css</code>.</p>
+        <p><strong>Análise:</strong> das 3 variantes, a vencedora (<code>&lt;RC/&gt;</code>) passou no teste do olho semicerrado (mesmo acento, mesma família, mesmo raio) e ainda comunicou literalmente "isto é código", mais alinhado ao objetivo do que a variante de contorno (perdia peso visual) ou a de duas linhas (reduzia legibilidade a distância). O maior obstáculo real não foi de design, mas de automação: o picker do live mode exige um evento de <code>hover</code> real antes do clique de seleção (senão o clique não registra), descoberto por tentativa e erro e documentado aqui para not repetir a investigação.</p>
+        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span>, variante 1 (<code>&lt;RC/&gt;</code>) integrada permanentemente ao <code>index.html</code>/<code>style.css</code>.</p>
       </div>
 
       <div class="doc-card">
         <span class="doc-label doc-label--command">8 · polish</span>
         <h2 style="margin-top:8px">Passe final sobre a v2 inteira</h2>
         <p><strong>Objetivo:</strong> verificar a jornada completa depois de todas as correções pontuais e da iteração de <code>live</code>, garantindo que nada regrediu e que a qualidade está uniforme entre seções.</p>
-        <p><strong>Prompt/orientação:</strong> checklist do próprio comando — fluxo/hierarquia, layout/tipografia, cor/ícones, interação/estado, conteúdo/código — verificado ao vivo em desktop e mobile, claro e escuro.</p>
+        <p><strong>Prompt/orientação:</strong> checklist do próprio comando, fluxo/hierarquia, layout/tipografia, cor/ícones, interação/estado, conteúdo/código, verificado ao vivo em desktop e mobile, claro e escuro.</p>
         <p><strong>Evidência:</strong> detector final (<code>index.html</code> + <code>css/style.css</code> + <code>js/script.js</code>) retornando <strong>0 achados</strong> (depois de 2 fixes reais de cor semântica documentada e 2 supressões narrowly-scoped e divulgadas ao usuário); badge de projeto usando fonte mono confirmado via <code>getComputedStyle</code>; alvo de toque do rodapé confirmado em 44×44px.</p>
-        <p><strong>Análise:</strong> o polish não encontrou nenhum P0/P1 novo — o que é o resultado esperado quando as 6 correções de seção e a diagnose (critique/audit) já foram feitas com cuidado. O valor deste passe foi confirmar, não descobrir.</p>
-        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span> — v2 considerada pronta para tag/publicação.</p>
+        <p><strong>Análise:</strong> o polish não encontrou nenhum P0/P1 novo, o que é o resultado esperado quando as 6 correções de seção e a diagnose (critique/audit) já foram feitas com cuidado. O valor deste passe foi confirmar, não descobrir.</p>
+        <p><strong>Decisão:</strong> <span class="doc-decision doc-decision--kept">✓ Mantido</span>, v2 considerada pronta para tag/publicação.</p>
       </div>
     </div>
   </main>
