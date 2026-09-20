@@ -197,6 +197,7 @@ form.addEventListener("submit", (event) => {
     contato() {
       linkLine("e-mail : ", "rachambela@gmail.com", "mailto:rachambela@gmail.com");
       linkLine("github : ", "github.com/RayaraChambela", "https://github.com/RayaraChambela");
+      linkLine("linkedin: ", "rayara-chambela-geronimo", "https://www.linkedin.com/in/rayara-chambela-geronimo-946944247/");
     },
     tema() {
       line(`tema ${toggleTheme() === "dark" ? "escuro" : "claro"} ativado.`);

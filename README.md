@@ -47,5 +47,4 @@ portfolio-pessoal/
 
 ## Pendências
 
-- Perfil de LinkedIn (o link ainda não existe no site).
 - Envio real do formulário (hoje abre o app de e-mail via `mailto:`).
