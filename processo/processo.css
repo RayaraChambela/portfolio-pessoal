@@ -34,16 +34,6 @@
   padding: 48px 0 80px;
 }
 
-.doc-eyebrow {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin: 0 0 8px;
-}
-
 .doc-title {
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   margin: 0 0 16px;

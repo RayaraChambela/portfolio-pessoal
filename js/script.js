@@ -4,91 +4,54 @@
 document.getElementById("ano-atual").textContent = new Date().getFullYear();
 
 // =========================================================
-// 2. Menu responsivo (hambúrguer) — RF10
+// 2. Menu responsivo (hambúrguer). Os ícones alternam via CSS
+//    a partir de aria-expanded.
 // =========================================================
 const nav = document.getElementById("nav");
 const navToggle = document.getElementById("nav-toggle");
 
-const navToggleIcon = navToggle.querySelector("span");
+function setMenu(open) {
+  nav.classList.toggle("is-open", open);
+  navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+}
 
 navToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("is-open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
-  navToggleIcon.textContent = isOpen ? "✕" : "☰";
+  setMenu(!nav.classList.contains("is-open"));
 });
 
 // Fecha o menu ao clicar em um link (útil no mobile)
 nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Abrir menu");
-    navToggleIcon.textContent = "☰";
-  });
+  link.addEventListener("click", () => setMenu(false));
 });
 
 // =========================================================
-// 3. Tema claro/escuro com persistência — RF09
+// 3. Tema claro/escuro com persistência
 // =========================================================
 const THEME_KEY = "portfolio-theme";
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 
 function applyTheme(theme) {
-  if (theme === "dark") {
-    root.setAttribute("data-theme", "dark");
-    themeToggle.querySelector("span").textContent = "☀️";
-  } else {
-    root.removeAttribute("data-theme");
-    themeToggle.querySelector("span").textContent = "🌙";
-  }
+  if (theme === "dark") root.setAttribute("data-theme", "dark");
+  else root.removeAttribute("data-theme");
 }
 
-const savedTheme =
-  localStorage.getItem(THEME_KEY) ||
-  (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-applyTheme(savedTheme);
-
-themeToggle.addEventListener("click", () => {
-  const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  const next = current === "dark" ? "light" : "dark";
+function toggleTheme() {
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
   applyTheme(next);
-  localStorage.setItem(THEME_KEY, next);
-});
+  try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* armazenamento indisponível */ }
+  return next;
+}
+
+let savedTheme = null;
+try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) { /* ignora */ }
+applyTheme(savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+
+themeToggle.addEventListener("click", toggleTheme);
 
 // =========================================================
-// 4. Filtro de projetos por tecnologia — RF05
-// =========================================================
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-const emptyState = document.getElementById("empty-state");
-
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => {
-      b.classList.remove("is-active");
-      b.setAttribute("aria-pressed", "false");
-    });
-    btn.classList.add("is-active");
-    btn.setAttribute("aria-pressed", "true");
-
-    const filter = btn.dataset.filter;
-    let visibleCount = 0;
-
-    projectCards.forEach((card) => {
-      const tags = card.dataset.tags.split(" ");
-      const matches = filter === "todos" || tags.includes(filter);
-      card.style.display = matches ? "" : "none";
-      if (matches) visibleCount++;
-    });
-
-    emptyState.hidden = visibleCount !== 0;
-  });
-});
-
-// =========================================================
-// 5. Validação do formulário de contato — RF07 / RF13
+// 4. Validação do formulário de contato
 // =========================================================
 const form = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
@@ -110,12 +73,11 @@ function validateField(field) {
     errorEl.textContent = "";
     field.setAttribute("aria-invalid", "false");
     return true;
-  } else {
-    wrapper.classList.add("has-error");
-    errorEl.textContent = result;
-    field.setAttribute("aria-invalid", "true");
-    return false;
   }
+  wrapper.classList.add("has-error");
+  errorEl.textContent = result;
+  field.setAttribute("aria-invalid", "true");
+  return false;
 }
 
 // Valida ao sair do campo (blur), para feedback progressivo
@@ -136,16 +98,13 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // Sem back-end nesta entrega: em vez de simular um envio bem-sucedido (o que
-  // enganaria quem preenche o formulário achando que a mensagem chegou), abrimos
-  // o app de e-mail do visitante já preenchido com os dados digitados. É uma ação
-  // real, não uma resposta fabricada — ver docs/02-requisitos.md para a próxima
-  // entrega com um serviço real (ex.: Formspree, EmailJS) via fetch().
+  // Sem back-end: em vez de simular um envio, abre o app de e-mail do
+  // visitante já preenchido. É uma ação real, não uma resposta fabricada.
   const nome = form.elements.nome.value.trim();
   const email = form.elements.email.value.trim();
   const mensagem = form.elements.mensagem.value.trim();
-  const assunto = encodeURIComponent(`Contato via portfólio — ${nome}`);
-  const corpo = encodeURIComponent(`${mensagem}\n\n— ${nome} (${email})`);
+  const assunto = encodeURIComponent(`Contato via portfólio: ${nome}`);
+  const corpo = encodeURIComponent(`${mensagem}\n\n${nome} (${email})`);
 
   formStatus.textContent = "Abrindo seu app de e-mail para enviar a mensagem a rachambela@gmail.com...";
   formStatus.classList.add("is-success");
@@ -153,3 +112,142 @@ form.addEventListener("submit", (event) => {
   window.location.href = `mailto:rachambela@gmail.com?subject=${assunto}&body=${corpo}`;
   form.reset();
 });
+
+// =========================================================
+// 5. Terminal interativo do hero
+//    Todo o conteúdo é texto puro (textContent), sem innerHTML.
+// =========================================================
+(function initTerminal() {
+  const log = document.getElementById("terminal-log");
+  const termForm = document.getElementById("terminal-form");
+  const input = document.getElementById("terminal-input");
+  const hints = document.getElementById("terminal-hints");
+  if (!log || !termForm || !input || !hints) return;
+
+  const PROJECTS = [
+    {
+      name: "cantina-fatore",
+      what: "gestão de estoque e vendas de uma cantina escolar",
+      stack: "Python, Flask, MySQL, Tailwind",
+      url: "https://github.com/belleruivo/cantina-fatore",
+    },
+    {
+      name: "receitech",
+      what: "site de receitas com CRUD completo e login",
+      stack: "Node.js, Express, EJS, MySQL",
+      url: "https://github.com/RayaraChambela/receitech-parte2",
+    },
+    {
+      name: "reserva-de-salas",
+      what: "app mobile para reservar salas, com perfil de administrador",
+      stack: "React Native, TypeScript, Node.js, Prisma",
+      url: "https://github.com/RayaraChambela/reservas-salas",
+    },
+  ];
+
+  const history = [];
+  let historyIndex = 0;
+
+  function line(text, cls) {
+    const p = document.createElement("p");
+    p.className = "terminal__line" + (cls ? " " + cls : "");
+    p.textContent = text;
+    log.appendChild(p);
+    return p;
+  }
+
+  function linkLine(prefix, label, href) {
+    const p = line(prefix);
+    const a = document.createElement("a");
+    a.href = href;
+    a.textContent = label;
+    a.target = "_blank";
+    a.rel = "noopener";
+    p.appendChild(a);
+  }
+
+  const commands = {
+    help() {
+      line("comandos disponíveis:");
+      line("  sobre     quem sou eu");
+      line("  skills    linguagens e ferramentas");
+      line("  projetos  o que já construí");
+      line("  contato   como falar comigo");
+      line("  tema      alterna claro/escuro");
+      line("  clear     limpa a tela");
+    },
+    sobre() {
+      line("Rayara Chambela");
+      line("Estudante de Análise e Desenvolvimento de Sistemas no IFSP.");
+      line("Projetos de sala em grupo, do banco de dados à interface.", "terminal__line--muted");
+    },
+    skills() {
+      line("linguagens : C, Python, JavaScript, TypeScript, Java, SQL");
+      line("back-end   : Node.js, Express, Flask, MySQL, Prisma");
+      line("web/mobile : HTML, CSS, React, React Native");
+      line("prática    : Git, MVC, CRUD, POO, UML");
+    },
+    projetos() {
+      PROJECTS.forEach((p, i) => {
+        line(`${i + 1}. ${p.name}: ${p.what}`);
+        line(`   ${p.stack}`, "terminal__line--muted");
+        linkLine("   ", p.url.replace("https://", ""), p.url);
+      });
+    },
+    contato() {
+      linkLine("e-mail : ", "rachambela@gmail.com", "mailto:rachambela@gmail.com");
+      linkLine("github : ", "github.com/RayaraChambela", "https://github.com/RayaraChambela");
+    },
+    tema() {
+      line(`tema ${toggleTheme() === "dark" ? "escuro" : "claro"} ativado.`);
+    },
+  };
+
+  function run(raw) {
+    const name = raw.trim().toLowerCase();
+    if (!name) return;
+    line(name, "terminal__line--cmd");
+    history.push(name);
+    historyIndex = history.length;
+
+    if (name === "clear") {
+      log.replaceChildren();
+    } else if (Object.prototype.hasOwnProperty.call(commands, name)) {
+      commands[name]();
+    } else {
+      line(`comando não encontrado: ${name}. Digite help para ver as opções.`, "terminal__line--muted");
+    }
+    log.scrollTop = log.scrollHeight;
+  }
+
+  termForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    run(input.value);
+    input.value = "";
+  });
+
+  // Histórico com setas, como num terminal de verdade
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp" && history.length) {
+      event.preventDefault();
+      historyIndex = Math.max(0, historyIndex - 1);
+      input.value = history[historyIndex];
+    } else if (event.key === "ArrowDown" && history.length) {
+      event.preventDefault();
+      historyIndex = Math.min(history.length, historyIndex + 1);
+      input.value = history[historyIndex] || "";
+    }
+  });
+
+  // Atalhos clicáveis: quem não quer digitar (ou está no celular) também usa
+  hints.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-cmd]");
+    if (!chip) return;
+    run(chip.dataset.cmd);
+    input.focus({ preventScroll: true });
+  });
+
+  // Estado inicial: já mostra quem sou, sem roubar o foco da página
+  run("sobre");
+  line("digite help para ver os comandos.", "terminal__line--muted");
+})();

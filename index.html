@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayara Chambela — Desenvolvedora Front-end | Portfólio</title>
-  <meta name="description" content="Portfólio de Rayara Chambela, desenvolvedora front-end em transição de carreira, trazendo visão de produto para código." />
+  <title>Rayara Chambela · Estudante de Análise e Desenvolvimento de Sistemas</title>
+  <meta name="description" content="Portfólio de Rayara Chambela, estudante de Análise e Desenvolvimento de Sistemas no IFSP. Projetos de sala com Python, Node.js, SQL e React Native." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff5a3c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,17 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!-- Ícones (sprite SVG, traço único de 1.75px) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  </svg>
 
   <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
@@ -23,16 +34,18 @@
       <nav class="nav" id="nav">
         <a href="#sobre">Sobre</a>
         <a href="#habilidades">Habilidades</a>
-        <a href="#projetos">Trabalhos</a>
+        <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
       </nav>
 
       <div class="header__actions">
         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-          <span aria-hidden="true">🌙</span>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
         </button>
         <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-          <span class="nav-toggle__icon" aria-hidden="true">☰</span>
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
         </button>
       </div>
     </div>
@@ -42,151 +55,134 @@
     <!-- ===== Hero ===== -->
     <section class="hero container" id="inicio">
       <div class="hero__text">
-        <p class="hero__eyebrow">Desenvolvimento Front-end</p>
-        <h1>Sou <span class="highlight">Rayara Chambela</span>, desenvolvedora.</h1>
+        <h1>Sou <span class="highlight">Rayara Chambela</span>, estudante de desenvolvimento de sistemas.</h1>
         <p class="hero__lead">
-          Vim de outra área e migrei para desenvolvimento — trago visão de produto e de
-          processo para o código, não só a técnica. Construo interfaces com HTML, CSS e
-          JavaScript, com atenção a quem realmente vai usar.
+          Faço Análise e Desenvolvimento de Sistemas no IFSP. Nas aulas, construí sistemas
+          completos, do banco de dados à interface: um site de receitas, um sistema para
+          a cantina de uma escola e um app de reserva de salas.
         </p>
         <div class="hero__cta">
-          <a href="#projetos" class="btn btn--primary">Ver trabalhos</a>
+          <a href="#projetos" class="btn btn--primary">Ver projetos</a>
           <a href="#contato" class="btn btn--ghost">Falar comigo</a>
         </div>
       </div>
-      <div class="hero__avatar" aria-hidden="true"><span class="hero__avatar-bracket">&lt;</span>RC<span class="hero__avatar-bracket">/&gt;</span></div>
+
+      <div class="terminal" id="terminal">
+        <div class="terminal__bar" id="terminal-title">rayara@ifsp: ~</div>
+        <div class="terminal__log" id="terminal-log" role="log" aria-live="polite" aria-labelledby="terminal-title" tabindex="0"></div>
+        <div class="terminal__hints" id="terminal-hints">
+          <button type="button" class="terminal__chip" data-cmd="help">help</button>
+          <button type="button" class="terminal__chip" data-cmd="projetos">projetos</button>
+          <button type="button" class="terminal__chip" data-cmd="skills">skills</button>
+          <button type="button" class="terminal__chip" data-cmd="contato">contato</button>
+        </div>
+        <form class="terminal__form" id="terminal-form" autocomplete="off">
+          <label class="terminal__prompt" for="terminal-input">$</label>
+          <input type="text" id="terminal-input" spellcheck="false" autocapitalize="off" placeholder="digite help" />
+        </form>
+      </div>
     </section>
 
     <!-- ===== Sobre ===== -->
     <section class="section" id="sobre">
       <div class="container">
-        <span class="section__eyebrow">Sobre</span>
-        <h2 class="section__title">Quem escreve este código</h2>
+        <h2 class="section__title">Sobre mim</h2>
         <p class="section__text">
-          Cheguei ao desenvolvimento vindo de outra área — e isso molda como eu trabalho:
-          antes de escrever a primeira linha, quero entender o problema de quem vai usar
-          a interface. Foco em front-end (HTML, CSS e JavaScript), com atenção a
-          responsividade, tema claro/escuro e formulários que realmente funcionam, não só
-          que parecem funcionar.
+          Estudo Análise e Desenvolvimento de Sistemas no Instituto Federal de São Paulo.
+          Programo em C, Python, JavaScript e Node.js e trabalho com bancos de dados SQL.
+          Meus projetos de sala são feitos em grupo e começam pelo problema, não só pelo
+          código: no sistema da cantina, o grupo entrevistou a administradora e levantou
+          requisitos antes de programar; no Receitech, o layout foi prototipado no Figma
+          antes da primeira linha.
         </p>
-        <ul class="facts">
-          <li><strong>Em transição</strong> de carreira para dev</li>
-          <li><strong>Front-end</strong> como foco atual</li>
-          <li><strong>Visão de produto</strong> como diferencial</li>
-        </ul>
       </div>
     </section>
 
     <!-- ===== Habilidades ===== -->
     <section class="section section--alt" id="habilidades">
       <div class="container">
-        <span class="section__eyebrow">Habilidades</span>
-        <h2 class="section__title">O que eu uso no dia a dia</h2>
+        <h2 class="section__title">Habilidades</h2>
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Front-end</h3>
-            <ul class="tags">
-              <li>HTML</li><li>CSS</li><li>JavaScript</li>
-            </ul>
+        <div class="skills">
+          <div class="skill-row">
+            <h3>Linguagens</h3>
+            <ul class="tags"><li>C</li><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>Java</li><li>SQL</li></ul>
           </div>
-          <div class="skill-card">
-            <h3>Boas práticas</h3>
-            <ul class="tags">
-              <li>Responsivo</li><li>Tema claro/escuro</li><li>Validação de formulário</li>
-            </ul>
+          <div class="skill-row">
+            <h3>Back-end e dados</h3>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>Flask</li><li>MySQL</li><li>SQLite</li><li>Prisma</li><li>JWT</li></ul>
           </div>
-          <div class="skill-card">
-            <h3>Ferramentas</h3>
-            <ul class="tags">
-              <li>Git</li><li>GitHub</li><li>VS Code</li>
-            </ul>
+          <div class="skill-row">
+            <h3>Web e mobile</h3>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Tailwind CSS</li><li>EJS</li><li>React</li><li>React Native</li><li>Expo</li></ul>
           </div>
-          <div class="skill-card">
-            <h3>Complementares</h3>
-            <ul class="tags">
-              <li>Visão de produto</li><li>Comunicação</li><li>Pesquisa com usuários</li>
-            </ul>
+          <div class="skill-row">
+            <h3>Prática</h3>
+            <ul class="tags"><li>Git e GitHub</li><li>MVC</li><li>CRUD</li><li>Orientação a objetos</li><li>Modelagem UML</li><li>Figma</li></ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Trabalhos ===== -->
+    <!-- ===== Projetos ===== -->
     <section class="section" id="projetos">
       <div class="container">
-        <span class="section__eyebrow">Trabalhos</span>
-        <h2 class="section__title">O que eu já construí</h2>
+        <h2 class="section__title">Projetos de sala</h2>
+        <p class="section__text section__text--intro">
+          Os três foram desenvolvidos em grupo, como trabalhos do curso. O código de cada um está no GitHub.
+        </p>
 
-        <div class="filters" id="filtros" role="group" aria-label="Filtrar trabalhos por categoria">
-          <button class="filter-btn is-active" data-filter="todos" type="button" aria-pressed="true">Todos</button>
-          <button class="filter-btn" data-filter="front-end" type="button" aria-pressed="false">Front-end</button>
-          <button class="filter-btn" data-filter="javascript" type="button" aria-pressed="false">JavaScript</button>
-          <button class="filter-btn" data-filter="css" type="button" aria-pressed="false">CSS</button>
-        </div>
+        <div class="projects-grid">
 
-        <div class="projects-grid" id="projetos-grid">
-
-          <article class="project-card project-card--1" data-tags="front-end javascript css">
-            <div class="project-card__thumb" aria-hidden="true">
-              <span>💻</span>
-            </div>
-            <span class="project-card__badge">Projeto real</span>
-            <div class="project-card__body">
-              <h3>Este portfólio</h3>
-              <p>O site que você está vendo agora: página única em HTML/CSS/JS puro, com
-                tema claro/escuro persistido, filtro de projetos e formulário com
-                validação client-side campo a campo.</p>
-              <ul class="tags">
-                <li>front-end</li><li>javascript</li><li>css</li>
-              </ul>
-              <div class="project-card__links">
-                <a href="https://github.com/RayaraChambela/portfolio-pessoal" class="link" target="_blank" rel="noopener">Ver no GitHub</a>
-              </div>
+          <article class="project-card">
+            <h3>Cantina Fatore</h3>
+            <p class="project-card__summary">Sistema web para controlar estoque e vendas da cantina de uma escola, no lugar das anotações feitas à mão.</p>
+            <ul class="project-card__points">
+              <li>Cadastro de produtos e de funcionários, com cada venda ligada a quem comprou</li>
+              <li>Relatório de vendas exportado para Excel</li>
+              <li>Arquitetura MVC em Flask, com herança nas classes de relatório</li>
+              <li>Requisitos levantados em entrevista com a administradora da cantina</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>MySQL</li><li>Tailwind CSS</li><li>JavaScript</li></ul>
+            <div class="project-card__foot">
+              <span class="project-card__note">Grupo · 86 commits meus</span>
+              <a href="https://github.com/belleruivo/cantina-fatore" class="link" target="_blank" rel="noopener">Ver repositório <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </article>
 
-          <article class="project-card project-card--2" data-tags="javascript">
-            <div class="project-card__thumb" aria-hidden="true">
-              <span>🗓️</span>
-            </div>
-            <span class="project-card__badge">Projeto de exemplo</span>
-            <div class="project-card__body">
-              <h3>Painel de agendamento</h3>
-              <p>Exemplo ilustrativo de interface para marcação de horários com
-                calendário e confirmação por e-mail — protótipo de front-end para
-                demonstrar organização de estado em JavaScript puro.</p>
-              <ul class="tags">
-                <li>javascript</li>
-              </ul>
-              <div class="project-card__links">
-                <a href="#" class="link" aria-disabled="true">Em breve</a>
-              </div>
+          <article class="project-card">
+            <h3>Receitech</h3>
+            <p class="project-card__summary">Site de receitas completo, feito para demonstrar um CRUD de ponta a ponta com backend estruturado e banco relacional.</p>
+            <ul class="project-card__points">
+              <li>Cadastro, login e sessão de usuários</li>
+              <li>Publicação de receitas com upload de imagem, edição e exclusão</li>
+              <li>Comentários e navegação por categorias</li>
+              <li>Layout responsivo, prototipado antes no Figma</li>
+            </ul>
+            <ul class="tags"><li>Node.js</li><li>Express</li><li>EJS</li><li>MySQL</li><li>MVC</li></ul>
+            <div class="project-card__foot">
+              <span class="project-card__note">Grupo</span>
+              <a href="https://github.com/RayaraChambela/receitech-parte2" class="link" target="_blank" rel="noopener">Ver repositório <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </article>
 
-          <article class="project-card project-card--3" data-tags="css">
-            <div class="project-card__thumb" aria-hidden="true">
-              <span>📋</span>
-            </div>
-            <span class="project-card__badge">Projeto de exemplo</span>
-            <div class="project-card__body">
-              <h3>Painel de tarefas</h3>
-              <p>Exemplo ilustrativo de lista de tarefas com filtro por status e tema
-                responsivo — foco em CSS Grid/Flexbox e em pequenos detalhes de
-                microinteração.</p>
-              <ul class="tags">
-                <li>css</li>
-              </ul>
-              <div class="project-card__links">
-                <a href="#" class="link" aria-disabled="true">Em breve</a>
-              </div>
+          <article class="project-card">
+            <h3>Aplicativo de Reserva de Salas</h3>
+            <p class="project-card__summary">App mobile para consultar salas disponíveis e reservá-las, com uma área separada para quem administra.</p>
+            <ul class="project-card__points">
+              <li>Login por e-mail e senha, com perfis de usuário e administrador</li>
+              <li>Reserva com validação de conflito de horário</li>
+              <li>Histórico de reservas com cancelamento</li>
+              <li>CRUD de salas para o administrador, em API própria com JWT</li>
+            </ul>
+            <ul class="tags"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Node.js</li><li>Prisma</li><li>SQLite</li></ul>
+            <div class="project-card__foot">
+              <span class="project-card__note">Grupo</span>
+              <a href="https://github.com/RayaraChambela/reservas-salas" class="link" target="_blank" rel="noopener">Ver repositório <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
             </div>
           </article>
 
         </div>
-
-        <p class="empty-state" id="empty-state" hidden>Nenhum trabalho encontrado para este filtro.</p>
       </div>
     </section>
 
@@ -194,16 +190,13 @@
     <section class="section section--alt" id="contato">
       <div class="container contact">
         <div class="contact__info">
-          <span class="section__eyebrow">Contato</span>
-          <h2 class="section__title">Vamos conversar?</h2>
+          <h2 class="section__title">Contato</h2>
           <p class="section__text">
-            Me manda uma mensagem por e-mail, pelo formulário ao lado, ou vê meu código
-            no GitHub.
+            Escreva por e-mail, pelo formulário ao lado, ou veja mais código no GitHub.
           </p>
           <ul class="contact__links">
-            <li><a href="mailto:rachambela@gmail.com">✉️ rachambela@gmail.com</a></li>
-            <li><a href="https://github.com/RayaraChambela" target="_blank" rel="noopener">🐙 GitHub</a></li>
-            <li><a href="#" aria-disabled="true">💼 LinkedIn (em breve)</a></li>
+            <li><a href="mailto:rachambela@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> rachambela@gmail.com</a></li>
+            <li><a href="https://github.com/RayaraChambela" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> github.com/RayaraChambela</a></li>
           </ul>
         </div>
 
@@ -235,12 +228,11 @@
 
   <footer class="footer">
     <div class="container footer__bar">
-      <p>&copy; <span id="ano-atual"></span> Rayara Chambela. Todos os direitos reservados. ·
+      <p>&copy; <span id="ano-atual"></span> Rayara Chambela. ·
         <a href="processo/index.html">Processo de design com Impeccable</a></p>
       <div class="footer__socials">
-        <a href="https://github.com/RayaraChambela" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
-        <a href="#" aria-disabled="true" aria-label="LinkedIn (em breve)">💼</a>
-        <a href="mailto:rachambela@gmail.com" aria-label="E-mail">✉️</a>
+        <a href="https://github.com/RayaraChambela" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a href="mailto:rachambela@gmail.com" aria-label="E-mail"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
       </div>
     </div>
   </footer>

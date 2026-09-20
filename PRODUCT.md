@@ -8,11 +8,14 @@ web
 
 ## Users
 
-Recrutadores(as) e gestores de contratação avaliando Rayara Chambela como
-desenvolvedora front-end/full-stack (júnior a pleno), e clientes em potencial avaliando-a
-para projetos freelance. Situação típica: recebem o link do portfólio por e-mail ou
-LinkedIn e o abrem por menos de 2 minutos, entre outras tarefas, para decidir se avançam
-o contato (chamar para entrevista, responder, ou descartar).
+Recrutadores(as), gestores de contratação e professores avaliando Rayara Chambela,
+estudante de Análise e Desenvolvimento de Sistemas no IFSP, para estágio, vaga júnior ou
+projetos. Situação típica: recebem o link do portfólio por e-mail ou LinkedIn e o abrem
+por menos de 2 minutos, entre outras tarefas, para decidir se avançam o contato.
+
+> Atualização (v3): o posicionamento anterior ("front-end em transição de carreira") foi
+> substituído pelo que a Rayara descreveu depois: estudante de ADS com projetos de sala
+> em back-end, web e mobile. O portfólio não é só de front-end.
 
 ## Product Purpose
 
@@ -23,10 +26,11 @@ LinkedIn e repositórios separadamente.
 
 ## Positioning
 
-Rayara vem de outra área e migrou para desenvolvimento — isso é tratado como diferencial,
-não como lacuna: ela traz visão de produto e de processo (entender o problema do usuário
-antes de codar) que nem sempre está presente em quem entra direto de formação técnica.
-O portfólio deve comunicar essa trajetória como força, nunca escondê-la.
+Os projetos de sala da Rayara partem do problema, não só do código, e isso é verificável
+nos próprios repositórios: entrevista com a administradora da cantina e requisitos antes de
+programar (Cantina Fatore), layout prototipado no Figma (Receitech), perfis de acesso e
+regra de conflito de horário (Reserva de Salas). O portfólio mostra código real com o
+contexto de quem o usaria.
 
 ## Operating Context
 
