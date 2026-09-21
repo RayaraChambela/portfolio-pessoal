@@ -2,7 +2,7 @@
 name: Portfólio Pessoal — Rayara Chambela
 description: Portfólio single-page de desenvolvedora front-end/full-stack em transição de carreira
 colors:
-  primary: "#ff5a3c"
+  primary: "#c8341a"
   primary-dark-mode: "#ff8266"
   bg: "#fffdfb"
   bg-alt: "#f6f1ec"
@@ -10,8 +10,8 @@ colors:
   text: "#201a17"
   text-muted: "#6b615c"
   border: "#e8ded6"
-  error: "#e5484d"
-  success: "#12a150"
+  error: "#c4282e"
+  success: "#0b7a3b"
 typography:
   display:
     fontFamily: "Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
@@ -92,14 +92,14 @@ Paleta de acento único: neutros quentes fazem o trabalho de fundo/leitura, o co
 único ponto de cor com intenção (identidade + ação).
 
 ### Primary
-- **Coral Sinal** (`#ff5a3c` claro / `#ff8266` escuro): logo (ponto final), links ativos/
+- **Coral Sinal** (`#c8341a` claro (5,3:1 sobre branco; o `#ff5a3c` original dava 3,1:1) / `#ff8266` escuro): logo (ponto final), links ativos/
   hover, botão primário, eyebrow do hero, destaque de texto (`.highlight`), borda de foco
   de campos e botões ghost no hover. É o único acento oficial do sistema.
 
 ### Semantic
-- **Erro** (`#e5484d`, mesmo valor nos dois temas): borda de campo inválido e mensagem
+- **Erro** (`#c4282e` claro / `#f06a6e` escuro): borda de campo inválido e mensagem
   de erro do formulário de contato.
-- **Sucesso** (`#12a150`, mesmo valor nos dois temas): texto de confirmação do formulário
+- **Sucesso** (`#0b7a3b` claro / `#3ecf7c` escuro): texto de confirmação do formulário
   (`.form-status.is-success`).
 
 ### Neutral

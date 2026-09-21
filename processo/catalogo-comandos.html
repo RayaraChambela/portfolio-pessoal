@@ -118,7 +118,7 @@
               <td>Em paralelo/depois do <code>critique</code>, quando se quer números verificáveis (contraste, alvos de toque) e não só julgamento.</td>
               <td>Detectar que os campos de erro do formulário não tinham <code>aria-describedby</code>/<code>aria-invalid</code>, confirmado ao vivo no navegador.</td>
               <td>Reportar achados do detector sem verificar no código real (falso positivo não checado); relatar só P3 e enterrar os P0 reais.</td>
-              <td>Rodar o mesmo audit depois da correção e ver a nota subir (12/20 → recontagem após as correções de acessibilidade).</td>
+              <td>Rodar o audit de novo depois das correções e comparar: aqui foram 12/20 antes e 15/20 depois (autoavaliação minha, a partir das medições feitas no navegador).</td>
             </tr>
 
             <tr>
@@ -142,11 +142,11 @@
             </tr>
 
             <tr>
-              <td><code>quieter</code> <span class="doc-label doc-label--command">usado</span></td>
+              <td><code>quieter</code></td>
               <td>Simplificar</td>
               <td>Reduzir intensidade visual (saturação, peso, ruído) sem virar genérico, sofisticação por contenção.</td>
               <td>Quando uma interface está agressiva/carregada demais e compete consigo mesma por atenção.</td>
-              <td>Se os gradientes de dois tons nos thumbnails de projeto tivessem sido "acalmados" em vez de removidos, seria um caso de <code>quieter</code>.</td>
+              <td>Não aplicado neste projeto. Caso hipotético: se, em vez de remover os gradientes dos thumbnails, eu tivesse só reduzido a saturação deles, seria <code>quieter</code>. Usei <code>colorize</code> (remover) porque eles violavam a regra do acento único.</td>
               <td>Confundir "mais quieto" com "sem graça" (perder toda a personalidade); remover cor a ponto de quebrar hierarquia.</td>
               <td>A interface ainda é reconhecível como a mesma marca, só menos ruidosa, comparação lado a lado antes/depois.</td>
             </tr>
@@ -198,7 +198,7 @@
               <td>Quando o cinza/neutro está escondendo hierarquia real, ou quando uma cor "decorativa" está sendo usada sem função (nosso caso).</td>
               <td>Remover os gradientes de duas cores do avatar/thumbnails que quebravam a regra do acento único, deixando só o coral com função.</td>
               <td>Adicionar uma segunda cor "oficial" sem necessidade real; tratar decoração como se fosse estratégia de cor.</td>
-              <td>Contraste recomputado ao vivo (5.93:1 claro / 8.42:1 escuro) e ausência de nova cor fora do <code>DESIGN.md</code> no detector.</td>
+              <td>Contraste do texto secundário medido (5,93:1 claro / 8,42:1 escuro) e nenhuma cor fora do <code>DESIGN.md</code> no detector. Limite: essa checagem não viu que o próprio coral falhava AA no tema claro (3,10:1); só o critique refeito pegou, e a rodada seguinte trocou <code>#ff5a3c</code> por <code>#c8341a</code> (5,30:1).</td>
             </tr>
 
             <tr>
@@ -266,7 +266,7 @@
               <td>Preparar</td>
               <td>Diagnosticar o gargalo real de performance, corrigir, então medir, nunca otimizar o que não está lento.</td>
               <td>Quando há sinal concreto de lentidão (Core Web Vitals, bundle grande, muitas requisições), não por precaução genérica.</td>
-              <td>Reduzir de 6 para 3 variações de peso de fonte carregadas via Google Fonts (Inter 400/600, Poppins 700, JetBrains Mono 500).</td>
+              <td>Não aplicado como comando. O corte de 6 para 4 pesos de fonte (Inter 400/600, Poppins 700, JetBrains Mono 500) foi feito à mão durante o <code>typeset</code>, sem rodar <code>optimize</code> nem medir Core Web Vitals.</td>
               <td>Otimizar microdetalhe irrelevante enquanto ignora o gargalo real; quebrar funcionalidade em nome de performance.</td>
               <td>Comparar o número de arquivos de fonte/pesos carregados antes/depois via aba de rede do navegador.</td>
             </tr>

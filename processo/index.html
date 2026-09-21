@@ -31,7 +31,7 @@
         <a href="https://github.com/RayaraChambela/portfolio-pessoal" target="_blank" rel="noopener">Impeccable</a>.
         A tag <code>v1</code> preserva o estado anterior às mudanças e a tag <code>v2</code> guarda
         o resultado da correção de design. Depois disso, o conteúdo foi reescrito com os projetos
-        reais de sala (v3, o que está publicado hoje); os registros abaixo descrevem a v2. Esta página
+        reais de sala (v3); os registros abaixo descrevem a v2. Esta página
         reúne o catálogo dos 23 comandos estudados e os registros de cada aplicação no projeto.
       </p>
 
@@ -49,6 +49,22 @@
             <p style="margin:0; color:var(--text-muted)">Aceitável · Integridade de implementação 1/4 (nota mais baixa)</p>
           </div>
         </div>
+      </section>
+
+      <section class="doc-section">
+        <h2>Antes e depois</h2>
+        <div class="doc-table-wrap">
+          <table class="doc-table" style="min-width:520px">
+            <thead><tr><th>Medição</th><th>critique</th><th>P0</th><th>audit</th></tr></thead>
+            <tbody>
+              <tr><td>v1 (original)</td><td>21/32</td><td>3</td><td>12/20</td></tr>
+              <tr><td>v2, logo após as intervenções</td><td>20/32</td><td>1</td><td>não refeito</td></tr>
+              <tr><td>v2, depois da rodada de correção</td><td>22/32</td><td>0</td><td>15/20</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:16px"><strong>Como ler estes números.</strong> O critique é feito por dois avaliadores de IA independentes (um julga o design, outro coleta evidência no navegador). A nota subiu pouco (+1) e as três caem na mesma faixa, então o argumento de melhoria está nos fatos medidos: P0 de 3 para 0, contraste do botão primário de 3,10:1 para 5,30:1, formulário que não finge envio nem apaga a mensagem. A 1ª medição da v2 leu só o código, a da v1 usou o navegador, e o audit de 15/20 é autoavaliação minha. Notas de IA variam entre execuções; 1 a 2 pontos é ruído.</p>
+        <p><strong>Como foram conduzidas as intervenções.</strong> Cada comando foi aplicado seguindo a sua referência oficial, mas dentro de uma sessão de trabalho contínua, sem um prompt separado por comando. Por isso o campo "Orientação complementar" dos registros é a orientação formulada a partir do achado, e só o prompt do <code>live</code> foi digitado de fato.</p>
       </section>
 
       <section class="doc-section">
