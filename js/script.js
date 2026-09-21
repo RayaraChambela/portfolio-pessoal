@@ -18,6 +18,17 @@ navToggle.addEventListener("click", () => {
   navToggleIcon.textContent = isOpen ? "✕" : "☰";
 });
 
+// Esc fecha o menu e devolve o foco ao botão
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav.classList.contains("is-open")) {
+    nav.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menu");
+    navToggleIcon.textContent = "☰";
+    navToggle.focus();
+  }
+});
+
 // Fecha o menu ao clicar em um link (útil no mobile)
 nav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
@@ -133,6 +144,8 @@ form.addEventListener("submit", (event) => {
   if (!allValid) {
     formStatus.textContent = "Corrija os campos destacados antes de enviar.";
     formStatus.classList.remove("is-success");
+    const firstInvalid = fields.find((f) => f.getAttribute("aria-invalid") === "true");
+    if (firstInvalid) firstInvalid.focus();
     return;
   }
 
@@ -147,9 +160,26 @@ form.addEventListener("submit", (event) => {
   const assunto = encodeURIComponent(`Contato via portfólio — ${nome}`);
   const corpo = encodeURIComponent(`${mensagem}\n\n— ${nome} (${email})`);
 
-  formStatus.textContent = "Abrindo seu app de e-mail para enviar a mensagem a rachambela@gmail.com...";
+  // Não limpa o formulário: quem usa webmail pode não ter app de e-mail
+  // configurado, e apagar o que foi digitado seria perder a mensagem.
+  formStatus.textContent = "Tentei abrir seu app de e-mail. Se nada abriu, use o botão Copiar e-mail e escreva para rachambela@gmail.com.";
   formStatus.classList.add("is-success");
 
   window.location.href = `mailto:rachambela@gmail.com?subject=${assunto}&body=${corpo}`;
-  form.reset();
 });
+
+// =========================================================
+// 6. Copiar e-mail (alternativa ao mailto:)
+// =========================================================
+const copyBtn = document.getElementById("copy-email");
+const copyStatus = document.getElementById("copy-status");
+if (copyBtn) {
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("rachambela@gmail.com");
+      copyStatus.textContent = "E-mail copiado.";
+    } catch (e) {
+      copyStatus.textContent = "Não consegui copiar. O endereço é rachambela@gmail.com.";
+    }
+  });
+}
