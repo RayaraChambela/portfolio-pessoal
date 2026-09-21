@@ -4,6 +4,34 @@ Portfólio de Rayara Chambela, estudante de Análise e Desenvolvimento de Sistem
 com os projetos de sala publicados no GitHub. Passou por uma correção de design com o
 **Impeccable** (v1 → v2) e depois teve o conteúdo reescrito (v3, versão atual).
 
+## Como avaliar esta entrega
+
+Atividade de correção de design com o Impeccable. Onde está cada item pedido:
+
+| Item | Onde |
+|---|---|
+| **v1 do portfólio** (antes das modificações) | tag [`v1`](https://github.com/RayaraChambela/portfolio-pessoal/tree/v1) |
+| **v2 do portfólio** (corrigida) | tag [`v2`](https://github.com/RayaraChambela/portfolio-pessoal/tree/v2) |
+| **Catálogo dos 23 comandos** | `processo/catalogo-comandos.html` (na tag `v2`) |
+| **Registros da aplicação** | `processo/registros/` (7 páginas), com o ponto de partida em `processo/index.html` (na tag `v2`) |
+
+**Para ver as páginas prontas:** o GitHub mostra o código dos arquivos `.html`, não a página renderizada. Baixe a versão desejada e abra o arquivo no navegador:
+
+- v1: [baixar ZIP](https://github.com/RayaraChambela/portfolio-pessoal/archive/refs/tags/v1.zip), abrir `index.html`
+- v2: [baixar ZIP](https://github.com/RayaraChambela/portfolio-pessoal/archive/refs/tags/v2.zip), abrir `index.html` e, dentro dele, o link "Processo de design com Impeccable" no rodapé (ou abrir `processo/index.html` direto)
+
+Ou, com Git:
+
+```bash
+git clone https://github.com/RayaraChambela/portfolio-pessoal.git
+cd portfolio-pessoal
+git checkout v2      # ou v1
+```
+
+**Resumo da melhoria (v1 → v2):** critique de 21/32 (3 problemas bloqueantes) para 22/32 (0 bloqueantes), contraste do botão principal de 3,10:1 para 5,30:1 e formulário que não finge mais um envio. O hub `processo/index.html` traz a tabela antes/depois e as limitações do método.
+
+A `main` é uma evolução posterior (v3), com o conteúdo real dos projetos de sala; ela não é a versão avaliada.
+
 ## Versões
 
 | Tag / branch | O que é |
