@@ -10,13 +10,7 @@ com os projetos de sala publicados no GitHub. Passou por uma correção de desig
 |---|---|
 | `v1` | Template original: designer gráfica genérica, texto placeholder, formulário com envio simulado |
 | `v2` | Correção de design com o Impeccable (catálogo dos 23 comandos e 7 registros em `processo/`) |
-| `main` (v3) | Conteúdo real: bio de estudante de ADS, 3 projetos de sala, terminal interativo no hero |
-
-## O diferencial: terminal no hero
-
-No topo da página há um terminal que funciona. Digite `help` (ou clique nos atalhos) e
-use `sobre`, `skills`, `projetos`, `contato` e `tema`. Setas ↑/↓ navegam no histórico. É
-HTML/CSS/JS puro e o conteúdo vem dos mesmos dados dos projetos reais.
+| `main` (v3) | Conteúdo real: bio de estudante de ADS e 3 projetos de sala |
 
 ## Projetos apresentados
 
@@ -38,7 +32,7 @@ npx serve .
 portfolio-pessoal/
 ├── index.html
 ├── css/style.css
-├── js/script.js          # menu, tema, formulário (mailto:) e terminal
+├── js/script.js          # menu, tema e formulário (mailto:)
 ├── PRODUCT.md            # contexto de produto
 ├── DESIGN.md             # sistema de design
 ├── processo/             # catálogo dos 23 comandos e registros da v2

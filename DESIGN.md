@@ -213,14 +213,6 @@ v1. Geometria mais rigorosa, sem cantos decorativamente arredondados. Bordas fin
 - **Error:** borda no tom "Erro" (`{colors.error}`, `#e5484d`, agora documentado como
   cor semântica) + mensagem abaixo do campo, ligada via `aria-describedby`/`aria-invalid`.
 
-### Terminal (v3, diferencial do hero)
-- **Papel:** único uso de monoespaçada em bloco: código e comandos de verdade. O visitante
-  digita `help`, `projetos`, `skills`, `contato`, `tema` ou usa os atalhos clicáveis.
-- **Superfície:** escura nos dois temas (`--term-bg`), texto claro, acento coral só no
-  prompt e nos links. Sem decoração de janela (nada de bolinhas de macOS).
-- **Acessibilidade:** saída em `role="log"` com `aria-live="polite"`, região rolável
-  focável, atalhos em botões reais, histórico com setas, conteúdo inserido via `textContent`.
-
 ### Ícones
 - Sprite SVG inline (`<symbol>`), traço único de 1.75px, `currentColor`. Emoji não são
   usados como ícone.
