@@ -65,8 +65,3 @@ portfolio-pessoal/
 ├── DESIGN.md             # sistema de design
 ├── processo/             # catálogo dos 23 comandos e registros da v2
 └── docs/                 # planejamento original da 1ª entrega
-```
-
-## Pendências
-
-- Envio real do formulário (hoje abre o app de e-mail via `mailto:`).
