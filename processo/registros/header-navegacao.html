@@ -25,14 +25,13 @@
   <main class="doc-main">
     <div class="container" style="max-width: 760px">
       <a href="../index.html" class="doc-back">← Voltar ao processo</a>
-      <span class="doc-eyebrow">Registro de aplicação · Seção 1/6</span>
       <h1 class="doc-title">Header / Navegação</h1>
       <p class="doc-lead">Cabeçalho fixo, logo, navegação por âncoras, alternador de tema e menu hambúrguer mobile.</p>
 
       <dl class="doc-field"><dt>Problema observado</dt><dd>O <code>audit</code> e o <code>critique</code> confirmaram ao vivo que o menu hambúrguer mobile nunca troca o glifo (☰) para indicar estado aberto/fechado — a persona "Casey" (mobile) não tem confirmação visual além do próprio menu aparecer. Também faltava <code>aria-pressed</code> nos filtros de projeto (afeta a seção Trabalhos, mas o padrão de "estado sem sinalização" nasce aqui, no controle de navegação).</dd></dl>
       <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Se o botão do menu trocar de ícone e de <code>aria-label</code> ao abrir/fechar, tanto usuários visuais quanto de leitor de tela recebem confirmação de estado — reduzindo a insegurança de "cliquei, funcionou?" no mobile.</dd></dl>
       <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>adapt</code> — repensar o comportamento para o contexto mobile/toque, não só herdar o padrão desktop.</dd></dl>
-      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O menu hambúrguer não muda de ícone quando abre. Adapte para o contexto mobile: o botão precisa confirmar visualmente seu próprio estado (aberto/fechado), com <code>aria-expanded</code> e <code>aria-label</code> coerentes, e os alvos de toque do rodapé precisam ter pelo menos 44×44px."</dd></dl>
+      <dl class="doc-field"><dt>Orientação complementar</dt><dd><em>Formulada a partir do achado do critique. Não foi um prompt digitado à parte: a intervenção foi conduzida durante a sessão de trabalho.</em> "O menu hambúrguer não muda de ícone quando abre. Adapte para o contexto mobile: o botão precisa confirmar visualmente seu próprio estado (aberto/fechado), com <code>aria-expanded</code> e <code>aria-label</code> coerentes, e os alvos de toque do rodapé precisam ter pelo menos 44×44px."</dd></dl>
 
       <div class="doc-card">
         <h2 style="margin-top:0">Objetivo</h2>
@@ -50,7 +49,8 @@
         <p>A mudança é pequena em código (poucas linhas de JS) mas resolve um problema de confiança real: sem ela, o único sinal de que o menu abriu é o próprio menu aparecer — o que falha se a animação for perdida em conexões lentas ou se o usuário olhar primeiro para o botão. Não há efeito colateral: a função original (abrir/fechar) continua idêntica.</p>
 
         <h2>Decisão</h2>
-        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — comportamento incorporado à v2 sem ressalvas.</p>
+        <p><span class="doc-decision doc-decision--kept">✓ Mantido</span> — comportamento incorporado à v2.</p>
+        <p><strong>Rodada 2 (depois do critique refeito):</strong> a persona de teclado ainda não podia fechar o menu com Esc, e os links de navegação e do rodapé eram baixos demais (25,6px e 19,2px). Agora Esc fecha o menu e devolve o foco ao botão (verificado no navegador: <code>aria-expanded="false"</code> e foco em <code>#nav-toggle</code>), e os alvos ficaram com 44px ou mais, exceto o logo (32px de altura, acima do mínimo de 24px do WCAG 2.2, abaixo dos 44px que adotei como meta).</p>
       </div>
     </div>
   </main>

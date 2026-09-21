@@ -25,14 +25,13 @@
   <main class="doc-main">
     <div class="container" style="max-width: 760px">
       <a href="../index.html" class="doc-back">← Voltar ao processo</a>
-      <span class="doc-eyebrow">Registro de aplicação · Seção 6/6</span>
       <h1 class="doc-title">Contato</h1>
       <p class="doc-lead">Informações de contato + formulário com validação client-side.</p>
 
       <dl class="doc-field"><dt>Problema observado</dt><dd>O achado mais grave dos dois diagnósticos (P0 no <code>critique</code>, integridade de implementação em 1/4 no <code>audit</code>): o formulário exibia "Mensagem enviada! (envio simulado nesta entrega)" mesmo sem nenhum back-end real — um estado de sucesso fabricado. Os campos de erro também não tinham <code>aria-describedby</code>/<code>aria-invalid</code>, então um leitor de tela não conseguia associar o erro ao campo.</dd></dl>
       <dl class="doc-field"><dt>Hipótese de melhoria</dt><dd>Um formulário sem back-end pode ainda ser honesto e funcional se, em vez de fingir um envio, ele disparar uma ação real (abrir o cliente de e-mail do visitante já preenchido). Ligar os erros via ARIA resolve a lacuna de acessibilidade sem mudar a lógica de validação.</dd></dl>
       <dl class="doc-field"><dt>Comando escolhido</dt><dd><code>harden</code>: preparar a interface para a realidade (sem back-end) em vez de fingir uma condição que não existe.</dd></dl>
-      <dl class="doc-field"><dt>Prompt/orientação complementar</dt><dd>"O formulário finge que enviou a mensagem mas não há back-end nenhum — isso é um estado de sucesso fabricado, um dos P0 mais graves do critique. Não simule sucesso: dispare uma ação real (mailto: com os dados preenchidos) e seja honesto na mensagem sobre o que está acontecendo. Também ligue aria-describedby e aria-invalid nos campos de erro."</dd></dl>
+      <dl class="doc-field"><dt>Orientação complementar</dt><dd><em>Formulada a partir do achado do critique. Não foi um prompt digitado à parte: a intervenção foi conduzida durante a sessão de trabalho.</em> "O formulário finge que enviou a mensagem mas não há back-end nenhum — isso é um estado de sucesso fabricado, um dos P0 mais graves do critique. Não simule sucesso: dispare uma ação real (mailto: com os dados preenchidos) e seja honesto na mensagem sobre o que está acontecendo. Também ligue aria-describedby e aria-invalid nos campos de erro."</dd></dl>
 
       <div class="doc-card">
         <h2 style="margin-top:0">Objetivo</h2>
@@ -51,6 +50,7 @@
 
         <h2>Decisão</h2>
         <p><span class="doc-decision doc-decision--adjusted">↻ Ajustado</span>: resolvido para esta entrega via <code>mailto:</code> honesto; registrado como melhoria futura (serviço de e-mail real) no <code>PRODUCT.md</code>, não tratado como definitivo.</p>
+        <p><strong>Rodada 2 (depois do critique refeito):</strong> o critique refeito mostrou que o <code>mailto:</code> ainda podia falhar em silêncio (quem usa webmail costuma não ter app de e-mail configurado) e que o formulário era limpo depois do envio, apagando a mensagem. Agora o formulário não é limpo, a mensagem diz "Tentei abrir seu app de e-mail. Se nada abriu, use o botão Copiar e-mail…", há um botão Copiar e-mail, o foco vai ao primeiro campo inválido e as cores de erro e sucesso passam AA (5,69:1 no tema claro). Verificado no navegador: após envio vazio o foco fica em <code>#nome</code>; após envio válido os valores são mantidos. Limite que continua: o <code>mailto:</code> não confirma nada; um serviço de envio real segue como próximo passo.</p>
       </div>
     </div>
   </main>
