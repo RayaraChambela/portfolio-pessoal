@@ -190,7 +190,7 @@ form.addEventListener("submit", (event) => {
     sobre() {
       line("Rayara Chambela");
       line("Estudante de Análise e Desenvolvimento de Sistemas no IFSP.");
-      line("Projetos de sala em grupo, do banco de dados à interface.", "terminal__line--muted");
+      line("Transformo problemas reais em sistemas que funcionam, do banco de dados até a tela.", "terminal__line--muted");
     },
     skills() {
       line("linguagens : C, Python, JavaScript, TypeScript, Java, SQL");
